@@ -1,0 +1,67 @@
+name: PR Auto Grader
+
+on:
+  pull_request_target:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  grade:
+    name: PR Auto Grader
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # 1️⃣ Checkout PR code
+      - name: Checkout PR Code
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      # 2️⃣ Checkout Private Grader Repository
+      - name: Checkout Private Grader
+        uses: actions/checkout@v4
+        with:
+          repository: Once-1296/CoC-workshop-test-runner
+          token: ${{ secrets.GRADER_REPO_TOKEN }}
+          path: grader_repo
+      # validate cloned Repo
+      - name: Validate Cloned Repo
+        run: |
+          if [ ! -d "grader_repo" ]; then
+            echo "❌ Failed to clone grader repo"
+            exit 1
+          fi
+
+      # 3️⃣ Fetch main branch
+      - name: Fetch Main Branch
+        run: git fetch origin main
+
+      - name: Assemble Workspace
+        run: |
+          mkdir workspace
+          mkdir workspace/student_repo
+          cp -r grader_repo/grader workspace/
+          cp -r grader_repo/hidden_tests workspace/
+          cp -r "${{ github.event.pull_request.user.login }}_solutions/." workspace/student_repo/
+          ls
+          pwd
+          
+
+      # 4️⃣ Validate Repository Structure
+      - name: Validate Structure
+        run: python3 grader_repo/grader/validate_structure.py
+
+      # 5️⃣ Validate Only Allowed Files Modified
+      - name: Validate Diff
+        run: python3 grader_repo/grader/validate_diff.py
+        env:
+             GITHUB_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+             GITHUB_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+             PULL_REQUEST_AUTHOR: ${{ github.event.pull_request.user.login }}
