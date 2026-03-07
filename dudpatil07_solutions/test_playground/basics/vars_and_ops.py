@@ -11,7 +11,7 @@ print(round(num1 / num2,2)) # huh this shouldnt output 0, as a bonus can u also 
 
 a , n = 1, 31
 
-a==2**n
+a == 2**n
 
 # match the correct statements wrt bitwise operators
 
