@@ -1,9 +1,9 @@
 # declare some variables
 
 x = 10
-y = "5"
+y = 5
 
-print(x+y) # come on think, this ain't javascript
+print(x + y) # come on think, this ain't javascript
 
 num1 , num2 = 6 , 7
 
