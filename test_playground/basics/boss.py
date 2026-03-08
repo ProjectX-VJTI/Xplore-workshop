@@ -1,52 +1,59 @@
 choice = 'y'
 
-while choice =='y' : # make 'Y' valid too
+while choice =='y': # make 'Y' valid too
     try:
-        # typecast the below 2 to a list
-        
-        numbers =input("Enter the input numbers separated by spaces: ")
-        operators = input("Enter operators between them: ")
-
+        # typecast the below 2 to a lis
+        numbers =list(input("Enter the input numbers separated by spaces: ").split())
+        numbers=[int(x) for x in numbers]
+        operators = list(input("Enter operators between them: ").split())
         # check length matching
-
-        if len(numbers) != len(operators): # this seems odd... u might say it's ... off by one
-            print("What u doin fam ? ") # replace wiht better message :)
+        if len(numbers) != len(operators)+1: # this seems odd... u might say it's ... off by one
+            print("Invalid expression entered.") # replace wiht better message :)
             continue
-        
-        flag = False # huh this seems inverted
-        for i in range(len(numbers)): # indexing range fix
-            a, b, op = numbers[i-1], numbers[i], operators[i]
+        flag = True # huh this seems inverted
+        for i in range(1, len(numbers)): # indexing range fix
+            a, b, op = numbers[i-1], numbers[i], operators[i-1]
             # correct the ops
             match op:
                 case '+':
                     c = a + b
-                case '-':
-                    c = a * b
                 case '*':
-                    c = a / b
+                    c = a * b
                 case '/':
-                    c = a % b
+                    c = a / b
                 case '%':
+                    c = a % b
+                case '-':
                     c = a - b
-                case '//':
-                    c = a ** b
                 case '**':
-                    c = a // b
-                case _:
-                    flag = True
+                    c = a ** b
+                case '//':
+                    c = a // b #floor division
+                case _: #this considers any other case not mentioned above.
+                    flag = False
             if not flag:
-                print("Invalid ops vro")
+                print("Invalid ops.")
                 break
 
-            numbers[i-1] = c
+            numbers[i] = c
         if not flag:
             continue
-        print(f"Output: numbers[-1]")
-    except Exception:
-        print(f"Exception: ...") # print exception
+        print(f"Output: {numbers[-1]}")
+    except Exception as error:
+        print(f"Exception: {error}") # print exception
     finally:
         choice = input("Do you want to continue? [y/n] : ") # always ask before ending
 
 # can you make the code shorter and with improved answer? 
 # like handling any basic arithmetic equation (that may have brackets too) ?
 # u might wanna find a special function in python
+#alternate code
+#COMMENT OUT THE ABOVE CODE IF YOU WANT TO EXECUTE ALTERNATE CODE!!!
+while choice=='y':
+    try:
+        exp=(input('enter expression in one line: '))
+        print('Output:', eval(exp))
+    except Exception:
+        print('invalid expression')
+
+    choice=input('Do you want to continue? [y/n]: ')
