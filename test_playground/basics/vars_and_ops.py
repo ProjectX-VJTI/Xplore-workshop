@@ -1,7 +1,7 @@
 # declare some variables
 
 x = 10
-y = "5"
+y = 5
 
 print(x+y) # come on think, this ain't javascript
 
@@ -11,15 +11,14 @@ print(num1 // num2) # huh this shouldnt output 0, as a bonus can u also round to
 
 a , n = 1, 31
 
-for i in range(n):
-    a *= 2 # can you replace this loop with a one liner?
+a = 2 ** n
 
 
 # match the correct statements wrt bitwise operators
 
-print("AND operator:", " | ")
-print("OR operator:", " ^ ")
-print("XOR operator:", " & ")
+print("AND operator:", " & ")
+print("OR operator:", " | ")
+print("XOR operator:", " ^ ")
 
 
 
