@@ -1,1 +1,0 @@
-float(x) for x in input("Enter an array of numbers: ").split()
