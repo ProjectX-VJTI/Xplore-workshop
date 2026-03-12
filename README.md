@@ -11,6 +11,13 @@ This repository is designed to help students practice Python after learning the 
 
 ## 📂 Repository Structure
 
+### 🔹 SOLUTIONS/ — Contribute & Share
+
+This is the folder where you put your solutions folder. 
+Every contributor's solution folder is uniquely identified by `<github_id>_solutions`.
+You can run `my_dir_setup.py` from main dir to set up your directory or do it manually with `mkdir` or `File Explorer`.
+Every change you make should be within your solutions folder only. Read [CONRIBUTING.MD](./CONTRIBUTING.md) for more info. 
+
 ### 🔹 tutorials/ — Learn & Explore
 
 This is your primary learning directory. Use it to understand Python concepts and explore its power.

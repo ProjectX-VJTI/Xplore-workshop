@@ -16,7 +16,9 @@ cd CoC-git-python-workshop
 ```
 ### 3️⃣ Create Your Solutions Folder
 
-Inside the repository, create a top-level folder named:
+**Note: You can also run the `my_dir_setup.py` in main directory, to automate making your directory,but it only works within your fork.**
+
+Inside the repository, create a folder inside top-level directory `SOLUTIONS` named:
 ```
 <githubid>_solutions
 ```
@@ -28,11 +30,12 @@ Inside the repository, create a top-level folder named:
 
 Copy the entire `test_playground` directory into your solutions folder:
 ```
-<githubid>_solutions/
-└── test_playground/
+SOLUTIONS
+└── <githubid>_solutions/
+      └── test_playground/
 ```
 
-⚠️ Do not modify the original test_playground directory or any file/directory outside your copied directory.
+⚠️ Do not modify the original test_playground directory or any file/directory outside your solutions directory.
 
 ### 5️⃣ Set Up Virtual Environment
 
