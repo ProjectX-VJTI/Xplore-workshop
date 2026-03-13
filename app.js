@@ -10,12 +10,16 @@ const API = {
         return res.ok ? await res.json() : null;
     },
     async getFile(filename) {
-        // Assuming your default branch is 'main'. Change to 'master' if needed.
         const url = `https://raw.githubusercontent.com/${Config.owner}/${Config.repo}/main/${filename}`;
         try {
             const res = await fetch(url);
             if (!res.ok) return "Not available";
-            return await res.text(); // Fetches the raw markdown text directly!
+
+            // Instead of res.text(), we get the raw bytes and decode them as UTF-8
+            const buffer = await res.arrayBuffer();
+            const decoder = new TextDecoder("utf-8");
+            return decoder.decode(buffer);
+            
         } catch (error) {
             console.error(`Error fetching ${filename}:`, error);
             return "Not available";
