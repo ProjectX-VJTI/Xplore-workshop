@@ -1,0 +1,10 @@
+[
+  {
+    "user": "hello",
+    "bot": "[simulated] You said: hello"
+  },
+  {
+    "user": "lol",
+    "bot": "[simulated] You said: lol"
+  }
+]

@@ -1,0 +1,41 @@
+Emp_ID,Name,Age,Salary,Department,Joining_Date,Performance_Score,Is_Active,Project_Count,City,Country,Bonus
+1001,Grace Brown,40.0,117784.19,Sales,2022-04-25,2.3,True,4,Mumbai,Global,
+1002,Charlie Smith,56.0,143507.08,HR,2021-04-24,4.3,False,6,Tokyo,Global,2464.0
+1003,Ivy Miller,39.0,88626.39,,2020-10-11,2.2,True,10,London,Global,
+1004,Grace Brown,32.0,136533.75,Finance,2023-06-21,3.3,False,7,Mumbai,Global,6227.0
+1005,Frank Johnson,,114456.25,Sales,2023-04-13,2.4,False,15,Mumbai,Global,3113.0
+1006,Grace Brown,39.0,108658.24,HR,2021-05-17,2.5,True,1,London,Global,7323.0
+1007,Jack Smith,30.0,73218.55,Marketing,2021-08-07,2.1,True,2,Sydney,Global,6253.0
+1008,Harsh Miller,41.0,89128.56,Sales,2021-06-28,3.8,True,9,Mumbai,Global,6999.0
+1009,Alice Williams,22.0,144981.46,Engineering,2022-12-03,3.1,False,6,New York,Global,6092.0
+1010,Frank Williams,33.0,84401.95,Sales,2020-05-22,3.5,True,5,London,Global,
+1011,Charlie Miller,42.0,106094.81,Finance,2023-10-06,2.7,True,6,London,Global,7326.0
+1012,Bob Smith,33.0,53100.38,Engineering,2023-06-12,4.9,True,7,Mumbai,Global,4658.0
+1013,Harsh Miller,36.0,98775.24,Finance,2021-08-31,3.5,False,4,Sydney,Global,8691.0
+1014,Bob Johnson,30.0,50674.55,Finance,2021-09-17,2.1,False,8,Tokyo,Global,9492.0
+1015,David Davis,24.0,102769.65,Finance,2022-11-27,1.1,True,13,Sydney,Global,
+1016,David Miller,22.0,59908.01,Sales,2022-12-26,4.4,False,5,Mumbai,Global,1406.0
+1017,Harsh Smith,47.0,113299.95,HR,2021-02-24,1.9,True,6,Tokyo,Global,4426.0
+1018,Eva Williams,60.0,143250.54,,2021-02-04,1.9,False,8,Mumbai,Global,3626.0
+1019,Frank Williams,48.0,72792.74,Marketing,2022-03-02,1.1,True,7,New York,Global,6345.0
+1020,Frank Smith,50.0,85521.44,Finance,2023-02-11,1.5,False,14,London,Global,2932.0
+1021,Harsh Jones,32.0,121717.59,Marketing,2022-03-03,4.8,False,10,Mumbai,Global,9959.0
+1022,Jack Jones,41.0,107636.77,HR,2020-11-10,4.1,False,4,Tokyo,Global,3024.0
+1023,David Jones,50.0,77728.73,Engineering,2023-11-11,3.7,False,3,London,Global,
+1024,Eva Jones,24.0,47849.97,Finance,2020-02-03,2.1,True,2,Tokyo,Global,6571.0
+1025,Frank Garcia,57.0,41003.62,Engineering,2020-10-04,1.8,False,3,Sydney,Global,7860.0
+1026,Grace Johnson,47.0,142896.35,Marketing,2024-01-09,2.5,True,9,Sydney,Global,7047.0
+1027,Charlie Brown,23.0,107893.54,Marketing,2021-03-04,3.2,True,14,London,Global,2779.0
+1028,Ivy Brown,59.0,65977.65,Marketing,2022-10-07,4.6,False,15,Mumbai,Global,
+1029,Jack Miller,34.0,41687.96,Sales,2020-04-08,1.7,False,2,Mumbai,Global,4360.0
+1030,Frank Williams,51.0,145576.31,Finance,2020-08-09,4.5,False,14,Sydney,Global,1524.0
+1031,Bob Johnson,27.0,118866.5,Marketing,2022-01-25,3.1,True,6,New York,Global,7217.0
+1032,Eva Jones,52.0,48030.65,Marketing,2022-11-21,4.1,False,8,Tokyo,Global,8599.0
+1033,Jack Garcia,47.0,117487.08,Engineering,2022-08-19,4.9,True,6,Tokyo,Global,3461.0
+1034,Eva Brown,31.0,130304.5,Finance,2021-11-13,3.8,True,14,Tokyo,Global,4086.0
+1035,David Williams,60.0,125811.24,Finance,2022-03-08,4.0,True,4,Tokyo,Global,9105.0
+1036,David Davis,25.0,60136.37,Marketing,2021-04-18,3.8,False,13,Mumbai,Global,3903.0
+1037,Alice Miller,27.0,104848.46,Finance,2020-07-31,4.5,True,5,New York,Global,6680.0
+1038,Ivy Garcia,34.0,71672.36,Engineering,2021-11-24,4.8,True,11,Mumbai,Global,8272.0
+1039,Bob Williams,50.0,134702.91,,2023-12-23,4.4,True,9,Tokyo,Global,8632.0
+1040,Charlie Davis,32.0,59592.18,Marketing,2022-10-06,4.1,True,12,London,Global,7795.0
