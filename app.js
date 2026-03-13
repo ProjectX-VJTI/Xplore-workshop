@@ -54,8 +54,9 @@ const UI = {
 
     getBadge(role, mergedPrs) {
         let badges = [];
-        if (role === 'admin') badges.push('<span class="badge-admin" title="Admin"><i class="fa-solid fa-hashtag"></i>1</span>');
-        if (role === 'collaborator') badges.push('<span class="badge-veteran" title="Collaborator"><i class="fa-solid fa-star"></i> Veteran</span>');
+        if (role === 'admin') badges.push('<span class="badge-admin" title="Admin"><i class="fa-solid fa-hashtag"></i> Admin</span>');
+        else if (role === 'collaborator') badges.push('<span class="badge-veteran" title="Collaborator"><i class="fa-solid fa-heart"></i> Veteran</span>');
+        else badges.push('<span class="badge-rookie" title="Contributor"><i class="fa-solid fa-heart"></i> Rookie</span>');
         
         if (mergedPrs > 10) badges.push('<i class="fa-solid fa-gem badge-diamond" title=">10 PRs"></i>');
         else if (mergedPrs >= 5) badges.push('<i class="fa-solid fa-medal badge-gold" title="5-9 PRs"></i>');
@@ -99,22 +100,36 @@ const UI = {
                     <table class="table table-dark table-hover align-middle">
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>Contributor</th>
                                 <th>Badges</th>
                                 <th>Score (${metric})</th>
                             </tr>
                         </thead>
                         <tbody>
-                            ${users.map(u => `
-                                <tr class="contributor-row" onclick="Router.navigate('profile', '${u.login}')">
-                                    <td>
-                                        <img src="${u.avatar_url}" width="30" class="rounded-circle me-2">
-                                        ${u.login}
-                                    </td>
-                                    <td>${this.getBadge(u.role, u.stats.all.prsMerged)}</td>
-                                    <td>${u.stats[timeframe][metric]}</td>
-                                </tr>
-                            `).join('')}
+                            ${users.map((u, index) => {
+                                // Determine rank-based styling
+                                const isTopThree = index < 3;
+                                const rankClass = index === 0 ? 'bg-gold' : index === 1 ? 'bg-silver' : index === 2 ? 'bg-bronze' : '';
+                                
+                                // Determine medal icon
+                                const medalIcon = index === 0 ? '<i class="fas fa-medal me-2 text-gold"></i>' : 
+                                                index === 1 ? '<i class="fas fa-medal me-2 text-silver"></i>' : 
+                                                index === 2 ? '<i class="fas fa-medal me-2 text-bronze"></i>' : '';
+
+                                return `
+                                    <tr class="contributor-row ${rankClass}" onclick="Router.navigate('profile', '${u.login}')">
+                                        <td>${index + 1}</td>
+                                        <td>
+                                            ${medalIcon}
+                                            <img src="${u.avatar_url}" width="30" class="rounded-circle me-2">
+                                            ${u.login}
+                                        </td>
+                                        <td>${this.getBadge(u.role, u.stats.all.prsMerged)}</td>
+                                        <td>${u.stats[timeframe][metric]}</td>
+                                    </tr>
+                                `;
+                            }).join('')}
                         </tbody>
                     </table>
                 </div>

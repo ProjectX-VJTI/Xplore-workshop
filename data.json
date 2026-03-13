@@ -5,19 +5,19 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 152,
-                "prsOpened": 13,
-                "prsMerged": 12
+                "commits": 154,
+                "prsOpened": 14,
+                "prsMerged": 13
             },
             "6m": {
-                "commits": 152,
-                "prsOpened": 13,
-                "prsMerged": 12
+                "commits": 154,
+                "prsOpened": 14,
+                "prsMerged": 13
             },
             "3m": {
-                "commits": 152,
-                "prsOpened": 13,
-                "prsMerged": 12
+                "commits": 154,
+                "prsOpened": 14,
+                "prsMerged": 13
             }
         }
     },
@@ -436,6 +436,28 @@
                 "commits": 12,
                 "prsOpened": 16,
                 "prsMerged": 12
+            }
+        }
+    },
+    {
+        "login": "NicoleM-789",
+        "avatar_url": "https://avatars.githubusercontent.com/u/217160147?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
+            },
+            "6m": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
+            },
+            "3m": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
             }
         }
     },
