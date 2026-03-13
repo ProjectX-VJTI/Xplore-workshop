@@ -80,7 +80,6 @@ const UI = {
                         </select>
                         <select id="metricFilter" class="form-select bg-dark text-light border-secondary" onchange="UI.filterLeaderboard()">
                             <option value="commits" ${metric === 'commits' ? 'selected' : ''}>Commits</option>
-                            <option value="changes" ${metric === 'changes' ? 'selected' : ''}>Lines Changed</option>
                             <option value="prsOpened" ${metric === 'prsOpened' ? 'selected' : ''}>PRs Opened</option>
                             <option value="prsMerged" ${metric === 'prsMerged' ? 'selected' : ''}>PRs Merged</option>
                         </select>
@@ -174,7 +173,6 @@ const UI = {
                         <h4>Stats Overview</h4>
                         <ul class="list-group list-group-flush bg-transparent">
                             <li class="list-group-item bg-transparent text-light"><b>Total Commits:</b> ${user.stats.all.commits}</li>
-                            <li class="list-group-item bg-transparent text-light"><b>Lines Changed:</b> ${user.stats.all.changes}</li>
                             <li class="list-group-item bg-transparent text-light"><b>PRs Opened:</b> ${user.stats.all.prsOpened}</li>
                             <li class="list-group-item bg-transparent text-light"><b>PRs Merged:</b> ${user.stats.all.prsMerged}</li>
                         </ul>
