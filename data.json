@@ -5,19 +5,41 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 159,
+                "commits": 161,
                 "prsOpened": 15,
                 "prsMerged": 14
             },
             "6m": {
-                "commits": 159,
+                "commits": 161,
                 "prsOpened": 15,
                 "prsMerged": 14
             },
             "3m": {
-                "commits": 159,
+                "commits": 161,
                 "prsOpened": 15,
                 "prsMerged": 14
+            }
+        }
+    },
+    {
+        "login": "AwdhootDev",
+        "avatar_url": "https://avatars.githubusercontent.com/u/263406236?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 3,
+                "prsOpened": 1,
+                "prsMerged": 1
+            },
+            "6m": {
+                "commits": 3,
+                "prsOpened": 1,
+                "prsMerged": 1
+            },
+            "3m": {
+                "commits": 3,
+                "prsOpened": 1,
+                "prsMerged": 1
             }
         }
     },
