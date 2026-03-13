@@ -10,10 +10,16 @@ const API = {
         return res.ok ? await res.json() : null;
     },
     async getFile(filename) {
-        const res = await fetch(`${Config.apiUrl}/repos/${Config.owner}/${Config.repo}/contents/${filename}`);
-        if (!res.ok) return "Not available";
-        const data = await res.json();
-        return atob(data.content); 
+        // Assuming your default branch is 'main'. Change to 'master' if needed.
+        const url = `https://raw.githubusercontent.com/${Config.owner}/${Config.repo}/main/${filename}`;
+        try {
+            const res = await fetch(url);
+            if (!res.ok) return "Not available";
+            return await res.text(); // Fetches the raw markdown text directly!
+        } catch (error) {
+            console.error(`Error fetching ${filename}:`, error);
+            return "Not available";
+        }
     },
     async getLeaderboardData() {
         try {
