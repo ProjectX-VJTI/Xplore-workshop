@@ -1,6 +1,6 @@
 const Config = {
-    owner: "YOUR_USERNAME", // Update this
-    repo: "YOUR_REPO_NAME", // Update this
+    owner: "ProjectX-VJTI", // Update this
+    repo: "Xplore-workshop", // Update this
     apiUrl: "https://api.github.com"
 };
 
