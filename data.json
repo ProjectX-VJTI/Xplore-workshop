@@ -5,19 +5,41 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 168,
+                "commits": 169,
                 "prsOpened": 16,
                 "prsMerged": 15
             },
             "6m": {
-                "commits": 168,
+                "commits": 169,
                 "prsOpened": 16,
                 "prsMerged": 15
             },
             "3m": {
-                "commits": 168,
+                "commits": 169,
                 "prsOpened": 16,
                 "prsMerged": 15
+            }
+        }
+    },
+    {
+        "login": "xBhoomi-AR",
+        "avatar_url": "https://avatars.githubusercontent.com/u/240110811?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 5,
+                "prsOpened": 1,
+                "prsMerged": 1
+            },
+            "6m": {
+                "commits": 5,
+                "prsOpened": 1,
+                "prsMerged": 1
+            },
+            "3m": {
+                "commits": 5,
+                "prsOpened": 1,
+                "prsMerged": 1
             }
         }
     },
@@ -270,17 +292,17 @@
         "stats": {
             "all": {
                 "commits": 5,
-                "prsOpened": 2,
+                "prsOpened": 3,
                 "prsMerged": 1
             },
             "6m": {
                 "commits": 5,
-                "prsOpened": 2,
+                "prsOpened": 3,
                 "prsMerged": 1
             },
             "3m": {
                 "commits": 5,
-                "prsOpened": 2,
+                "prsOpened": 3,
                 "prsMerged": 1
             }
         }
