@@ -5,19 +5,19 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 164,
-                "prsOpened": 15,
-                "prsMerged": 14
+                "commits": 166,
+                "prsOpened": 16,
+                "prsMerged": 15
             },
             "6m": {
-                "commits": 164,
-                "prsOpened": 15,
-                "prsMerged": 14
+                "commits": 166,
+                "prsOpened": 16,
+                "prsMerged": 15
             },
             "3m": {
-                "commits": 164,
-                "prsOpened": 15,
-                "prsMerged": 14
+                "commits": 166,
+                "prsOpened": 16,
+                "prsMerged": 15
             }
         }
     },
@@ -502,6 +502,28 @@
                 "commits": 12,
                 "prsOpened": 16,
                 "prsMerged": 12
+            }
+        }
+    },
+    {
+        "login": "paramgosar13-droid",
+        "avatar_url": "https://avatars.githubusercontent.com/u/260283594?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
+            },
+            "6m": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
+            },
+            "3m": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
             }
         }
     },
