@@ -484,6 +484,28 @@
         }
     },
     {
+        "login": "rushil23shah-hue",
+        "avatar_url": "https://avatars.githubusercontent.com/u/261558340?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
+            },
+            "6m": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
+            },
+            "3m": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
+            }
+        }
+    },
+    {
         "login": "kimayagaikwad2067-ship-it",
         "avatar_url": "https://avatars.githubusercontent.com/u/261634387?v=4",
         "role": "contributor",
