@@ -1,2 +1,0 @@
-# yayy
-print("Hello World")
