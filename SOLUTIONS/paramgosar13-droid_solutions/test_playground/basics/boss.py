@@ -10,6 +10,7 @@ while (choice =='y' or choice == 'Y') :
             continue
         
         flag = True # huh this seems inverted
+        c=0
         for i in range(1,len(numbers)): # indexing range fix
             a, b, op = int(numbers[i-1]), int(numbers[i]), operators[i-1]
             # correct the ops
@@ -34,7 +35,7 @@ while (choice =='y' or choice == 'Y') :
                 print("Invalid operators")
                 break
 
-            numbers[i] = c
+            numbers[i] = str(c)
         if not flag:
             continue
         print(f"Output:", numbers[-1])
