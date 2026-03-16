@@ -2,7 +2,6 @@
 
 from typing import Any, Dict, Iterable
 
-
 # swap keys and values
 def invert_dict(d: Dict[Any, Any]) -> Dict[Any, Any]:
     """Return value->key mapping."""
