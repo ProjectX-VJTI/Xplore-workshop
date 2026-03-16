@@ -5,19 +5,41 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 171,
+                "commits": 172,
                 "prsOpened": 16,
                 "prsMerged": 15
             },
             "6m": {
-                "commits": 171,
+                "commits": 172,
                 "prsOpened": 16,
                 "prsMerged": 15
             },
             "3m": {
-                "commits": 171,
+                "commits": 172,
                 "prsOpened": 16,
                 "prsMerged": 15
+            }
+        }
+    },
+    {
+        "login": "S4TY4M25",
+        "avatar_url": "https://avatars.githubusercontent.com/u/227123199?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 3,
+                "prsOpened": 1,
+                "prsMerged": 1
+            },
+            "6m": {
+                "commits": 3,
+                "prsOpened": 1,
+                "prsMerged": 1
+            },
+            "3m": {
+                "commits": 3,
+                "prsOpened": 1,
+                "prsMerged": 1
             }
         }
     },
@@ -94,17 +116,17 @@
         "stats": {
             "all": {
                 "commits": 3,
-                "prsOpened": 2,
+                "prsOpened": 3,
                 "prsMerged": 2
             },
             "6m": {
                 "commits": 3,
-                "prsOpened": 2,
+                "prsOpened": 3,
                 "prsMerged": 2
             },
             "3m": {
                 "commits": 3,
-                "prsOpened": 2,
+                "prsOpened": 3,
                 "prsMerged": 2
             }
         }
@@ -524,6 +546,28 @@
                 "commits": 12,
                 "prsOpened": 16,
                 "prsMerged": 12
+            }
+        }
+    },
+    {
+        "login": "sanvinaik",
+        "avatar_url": "https://avatars.githubusercontent.com/u/217440177?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 0,
+                "prsOpened": 2,
+                "prsMerged": 0
+            },
+            "6m": {
+                "commits": 0,
+                "prsOpened": 2,
+                "prsMerged": 0
+            },
+            "3m": {
+                "commits": 0,
+                "prsOpened": 2,
+                "prsMerged": 0
             }
         }
     },
