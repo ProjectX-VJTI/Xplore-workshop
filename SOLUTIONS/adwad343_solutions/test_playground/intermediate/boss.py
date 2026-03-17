@@ -105,7 +105,7 @@ class CartManager:
 
     def total(self) -> float:
         """Return cart grand total."""
-        return sum(row["price"] for row in self.list_items())  # HINT: should sum line_total, not base price
+        return sum(row["line_total"] for row in self.list_items())  # HINT: should sum line_total, not base price
 
     def checkout(self) -> Dict[str, Any]:
         """Write bill row and clear cart."""
