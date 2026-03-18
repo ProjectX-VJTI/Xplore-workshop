@@ -248,17 +248,17 @@
         "stats": {
             "all": {
                 "commits": 7,
-                "prsOpened": 2,
+                "prsOpened": 3,
                 "prsMerged": 2
             },
             "6m": {
                 "commits": 7,
-                "prsOpened": 2,
+                "prsOpened": 3,
                 "prsMerged": 2
             },
             "3m": {
                 "commits": 7,
-                "prsOpened": 2,
+                "prsOpened": 3,
                 "prsMerged": 2
             }
         }
@@ -616,6 +616,28 @@
         }
     },
     {
+        "login": "aaryanideas28",
+        "avatar_url": "https://avatars.githubusercontent.com/u/230731474?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 0,
+                "prsOpened": 4,
+                "prsMerged": 3
+            },
+            "6m": {
+                "commits": 0,
+                "prsOpened": 4,
+                "prsMerged": 3
+            },
+            "3m": {
+                "commits": 0,
+                "prsOpened": 4,
+                "prsMerged": 3
+            }
+        }
+    },
+    {
         "login": "paramgosar13-droid",
         "avatar_url": "https://avatars.githubusercontent.com/u/260283594?v=4",
         "role": "contributor",
@@ -678,28 +700,6 @@
                 "commits": 0,
                 "prsOpened": 2,
                 "prsMerged": 0
-            }
-        }
-    },
-    {
-        "login": "aaryanideas28",
-        "avatar_url": "https://avatars.githubusercontent.com/u/230731474?v=4",
-        "role": "contributor",
-        "stats": {
-            "all": {
-                "commits": 0,
-                "prsOpened": 3,
-                "prsMerged": 3
-            },
-            "6m": {
-                "commits": 0,
-                "prsOpened": 3,
-                "prsMerged": 3
-            },
-            "3m": {
-                "commits": 0,
-                "prsOpened": 3,
-                "prsMerged": 3
             }
         }
     },
