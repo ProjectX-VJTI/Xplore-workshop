@@ -5,19 +5,41 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 186,
+                "commits": 188,
                 "prsOpened": 16,
                 "prsMerged": 15
             },
             "6m": {
-                "commits": 186,
+                "commits": 188,
                 "prsOpened": 16,
                 "prsMerged": 15
             },
             "3m": {
-                "commits": 186,
+                "commits": 188,
                 "prsOpened": 16,
                 "prsMerged": 15
+            }
+        }
+    },
+    {
+        "login": "d4rshnn",
+        "avatar_url": "https://avatars.githubusercontent.com/u/258089089?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 4,
+                "prsOpened": 1,
+                "prsMerged": 1
+            },
+            "6m": {
+                "commits": 4,
+                "prsOpened": 1,
+                "prsMerged": 1
+            },
+            "3m": {
+                "commits": 4,
+                "prsOpened": 1,
+                "prsMerged": 1
             }
         }
     },
