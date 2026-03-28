@@ -226,17 +226,17 @@
         "stats": {
             "all": {
                 "commits": 3,
-                "prsOpened": 2,
+                "prsOpened": 3,
                 "prsMerged": 1
             },
             "6m": {
                 "commits": 3,
-                "prsOpened": 2,
+                "prsOpened": 3,
                 "prsMerged": 1
             },
             "3m": {
                 "commits": 3,
-                "prsOpened": 2,
+                "prsOpened": 3,
                 "prsMerged": 1
             }
         }
@@ -660,6 +660,28 @@
         }
     },
     {
+        "login": "paramgosar13-droid",
+        "avatar_url": "https://avatars.githubusercontent.com/u/260283594?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 0,
+                "prsOpened": 3,
+                "prsMerged": 2
+            },
+            "6m": {
+                "commits": 0,
+                "prsOpened": 3,
+                "prsMerged": 2
+            },
+            "3m": {
+                "commits": 0,
+                "prsOpened": 3,
+                "prsMerged": 2
+            }
+        }
+    },
+    {
         "login": "aaryanideas28",
         "avatar_url": "https://avatars.githubusercontent.com/u/230731474?v=4",
         "role": "contributor",
@@ -678,28 +700,6 @@
                 "commits": 0,
                 "prsOpened": 4,
                 "prsMerged": 4
-            }
-        }
-    },
-    {
-        "login": "paramgosar13-droid",
-        "avatar_url": "https://avatars.githubusercontent.com/u/260283594?v=4",
-        "role": "contributor",
-        "stats": {
-            "all": {
-                "commits": 0,
-                "prsOpened": 2,
-                "prsMerged": 2
-            },
-            "6m": {
-                "commits": 0,
-                "prsOpened": 2,
-                "prsMerged": 2
-            },
-            "3m": {
-                "commits": 0,
-                "prsOpened": 2,
-                "prsMerged": 2
             }
         }
     },
