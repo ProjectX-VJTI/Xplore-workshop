@@ -5,19 +5,19 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 197,
-                "prsOpened": 17,
-                "prsMerged": 16
+                "commits": 199,
+                "prsOpened": 18,
+                "prsMerged": 17
             },
             "6m": {
-                "commits": 197,
-                "prsOpened": 17,
-                "prsMerged": 16
+                "commits": 199,
+                "prsOpened": 18,
+                "prsMerged": 17
             },
             "3m": {
-                "commits": 197,
-                "prsOpened": 17,
-                "prsMerged": 16
+                "commits": 199,
+                "prsOpened": 18,
+                "prsMerged": 17
             }
         }
     },
@@ -28,17 +28,17 @@
         "stats": {
             "all": {
                 "commits": 10,
-                "prsOpened": 4,
+                "prsOpened": 6,
                 "prsMerged": 4
             },
             "6m": {
                 "commits": 10,
-                "prsOpened": 4,
+                "prsOpened": 6,
                 "prsMerged": 4
             },
             "3m": {
                 "commits": 10,
-                "prsOpened": 4,
+                "prsOpened": 6,
                 "prsMerged": 4
             }
         }
