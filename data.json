@@ -5,17 +5,17 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 208,
+                "commits": 209,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "6m": {
-                "commits": 208,
+                "commits": 209,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "3m": {
-                "commits": 208,
+                "commits": 209,
                 "prsOpened": 18,
                 "prsMerged": 17
             }
@@ -678,6 +678,28 @@
                 "commits": 12,
                 "prsOpened": 16,
                 "prsMerged": 12
+            }
+        }
+    },
+    {
+        "login": "luvjain22307-hue",
+        "avatar_url": "https://avatars.githubusercontent.com/u/258564117?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
+            },
+            "6m": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
+            },
+            "3m": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
             }
         }
     },
