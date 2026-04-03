@@ -13,10 +13,13 @@ jobs:
   grade:
     name: PR Auto Grader
     runs-on: ubuntu-latest
+    env:
+      # Future-proofing against the Node 20 deprecation warning
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
-
-      # 1️⃣ Checkout PR code
+      # 1️⃣ Checkout the Student's PR branch
+      # We use fetch-depth: 0 to ensure we have the history needed for git diff
       - name: Checkout PR Code
         uses: actions/checkout@v4
         with:
@@ -25,43 +28,49 @@ jobs:
           fetch-depth: 0
 
       # 2️⃣ Checkout Private Grader Repository
+      # Using the PAT to access your private test runner
       - name: Checkout Private Grader
         uses: actions/checkout@v4
         with:
           repository: Once-1296/CoC-workshop-test-runner
           token: ${{ secrets.GRADER_REPO_TOKEN }}
           path: grader_repo
-      # validate cloned Repo
-      - name: Validate Cloned Repo
-        run: |
-          if [ ! -d "grader_repo" ]; then
-            echo "❌ Failed to clone grader repo"
-            exit 1
-          fi
+          persist-credentials: false
 
-      # 3️⃣ Fetch main branch
+      # 3️⃣ Fetch the Main branch from the ORIGINAL repo
+      # This fixes the "fatal: bad object" error by letting Git see the Base SHA
       - name: Fetch Main Branch
-        run: git fetch origin main
+        run: |
+          git remote add upstream https://github.com/${{ github.repository }}
+          git fetch upstream main
 
+      # 4️⃣ Assemble Workspace
+      # Note: Ensure the folder structure matches your Python allowed_prefix logic
       - name: Assemble Workspace
         run: |
-          mkdir workspace
-          mkdir workspace/student_repo
+          mkdir -p workspace/student_repo
           cp -r grader_repo/grader workspace/
           cp -r grader_repo/hidden_tests workspace/
-          cp -r "${{ github.event.pull_request.user.login }}_solutions/." workspace/student_repo/
-          ls
-          pwd
           
+          # Adjusting this to match your Python script's expected path
+          # If the folder is SOLUTIONS/username, we copy that content
+          TARGET_DIR="SOLUTIONS/${{ github.event.pull_request.user.login }}"
+          if [ -d "$TARGET_DIR" ]; then
+            cp -r "$TARGET_DIR/." workspace/student_repo/
+          else
+            echo "⚠️ Warning: $TARGET_DIR not found"
+          fi
+          
+          ls -R workspace
 
-      # 4️⃣ Validate Repository Structure
+      # 5️⃣ Validate Repository Structure
       - name: Validate Structure
         run: python3 grader_repo/grader/validate_structure.py
 
-      # 5️⃣ Validate Only Allowed Files Modified
+      # 6️⃣ Validate Only Allowed Files Modified
       - name: Validate Diff
         run: python3 grader_repo/grader/validate_diff.py
         env:
-             GITHUB_BASE_SHA: ${{ github.event.pull_request.base.sha }}
-             GITHUB_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-             PULL_REQUEST_AUTHOR: ${{ github.event.pull_request.user.login }}
+          GITHUB_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          GITHUB_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PULL_REQUEST_AUTHOR: ${{ github.event.pull_request.user.login }}

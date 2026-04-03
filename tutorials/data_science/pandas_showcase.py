@@ -6,25 +6,23 @@
 import pandas as pd
 import numpy as np
 import random
-import os
+from pathlib import Path
 
 # 1. Generate Dummy Dataset
 # -------------------------
 def generate_dataset(filename="dummy_data.csv", rows=40):
-    if os.path.exists(filename):
-        print(f"'{filename}' already exists. Loading data...\n")
-        return pd.read_csv(filename)
-    
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    if not os.path.exists(script_dir):
-        print(f"Warning: Script directory '{script_dir}' does not exist. Using current working directory.")
-        script_dir = os.getcwd()
-    if not os.path.exists(os.path.join(script_dir, filename)):
-        print(f"Warning: '{filename}' does not exist in '{script_dir}'. It will be created.")
-    else:
-        print(f"'{filename}' found in '{script_dir}'. Loading data...\n")
-        return pd.read_csv(os.path.join(script_dir, filename))
-    print(f"Generating new dataset '{filename}'...\n")
+    # Resolve script-local path and accept absolute paths too
+    script_dir = Path(__file__).resolve().parent
+    candidate = Path(filename)
+    if not candidate.is_absolute():
+        candidate = script_dir / filename
+
+    if candidate.exists():
+        print(f"'{candidate}' already exists. Loading data...\n")
+        return pd.read_csv(candidate)
+
+    # If file doesn't exist, inform the user we will create it in script dir
+    print(f"Generating new dataset '{candidate}'...\n")
     first_names = ["Alice", "Bob", "Charlie", "David", "Eva", "Frank", "Grace", "Harsh", "Ivy", "Jack"]
     last_names = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis"]
     departments = ["HR", "Engineering", "Sales", "Marketing", "Finance"]
@@ -49,7 +47,9 @@ def generate_dataset(filename="dummy_data.csv", rows=40):
         data.append(row)
         
     df = pd.DataFrame(data)
-    df.to_csv(filename, index=False)
+    # ensure parent exists (should be script dir; usually exists)
+    candidate.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(candidate, index=False)
     return df
 
 # Load the data

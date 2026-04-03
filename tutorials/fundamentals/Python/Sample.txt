@@ -1,0 +1,3 @@
+Overwriting the file with help of write_text
+With the help of 'a' modifier we can append and then write the file
+New data

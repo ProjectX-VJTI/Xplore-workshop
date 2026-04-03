@@ -359,12 +359,16 @@ if st.session_state["cached_csv_data"]:
         yl = st.selectbox("Y Axis", cols, index=1 if len(cols) > 1 else 0)
 
 # JS for warn on refresh (maintained from your original)
+from pathlib import Path
 try:
-    with open("warn_refresh.js", "r") as f:
-        js = f.read()
+    script_dir = Path(__file__).resolve().parent
+    warn_path = script_dir / "warn_refresh.js"
+    if warn_path.exists():
+        js = warn_path.read_text()
         st.components.v1.html(f"<script>{js}</script>", height=0)
-except FileNotFoundError:
-    pass  # Silent fail if file missing
+except Exception:
+    # intentionally tolerant: any error here shouldn't break the app
+    pass
 
 # Run
 display_analyzer(xl, yl)
