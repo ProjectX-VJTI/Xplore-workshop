@@ -5,17 +5,17 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 205,
+                "commits": 207,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "6m": {
-                "commits": 205,
+                "commits": 207,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "3m": {
-                "commits": 205,
+                "commits": 207,
                 "prsOpened": 18,
                 "prsMerged": 17
             }
@@ -44,6 +44,28 @@
         }
     },
     {
+        "login": "AwdhootDev",
+        "avatar_url": "https://avatars.githubusercontent.com/u/263406236?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 13,
+                "prsOpened": 6,
+                "prsMerged": 5
+            },
+            "6m": {
+                "commits": 13,
+                "prsOpened": 6,
+                "prsMerged": 5
+            },
+            "3m": {
+                "commits": 13,
+                "prsOpened": 6,
+                "prsMerged": 5
+            }
+        }
+    },
+    {
         "login": "sanvinaik",
         "avatar_url": "https://avatars.githubusercontent.com/u/217440177?v=4",
         "role": "contributor",
@@ -62,28 +84,6 @@
                 "commits": 5,
                 "prsOpened": 3,
                 "prsMerged": 2
-            }
-        }
-    },
-    {
-        "login": "AwdhootDev",
-        "avatar_url": "https://avatars.githubusercontent.com/u/263406236?v=4",
-        "role": "contributor",
-        "stats": {
-            "all": {
-                "commits": 10,
-                "prsOpened": 6,
-                "prsMerged": 4
-            },
-            "6m": {
-                "commits": 10,
-                "prsOpened": 6,
-                "prsMerged": 4
-            },
-            "3m": {
-                "commits": 10,
-                "prsOpened": 6,
-                "prsMerged": 4
             }
         }
     },
