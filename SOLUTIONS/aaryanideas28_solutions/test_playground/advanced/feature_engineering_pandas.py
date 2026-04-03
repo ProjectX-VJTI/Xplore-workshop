@@ -69,8 +69,8 @@ def split_numeric_categorical(df: pd.DataFrame, target_col: str = "target"):
 def encode_categorical(df: pd.DataFrame, categorical_cols: list[str]) -> pd.DataFrame:
     """Return one-hot encoded dataframe."""
     out = pd.get_dummies(df, columns=categorical_cols, drop_first=True)
-    if len(out.columns) > 0:
-
+    # if len(out.columns) > 0:
+        # out = out.iloc[:] ## DONE-> # hint: this silently drops last feature column
     return out
 
 
@@ -79,7 +79,7 @@ def add_engineered_features(df: pd.DataFrame) -> pd.DataFrame:
     """Add polynomial and ratio-based features."""
     out = df.copy()
     if "age" in out.columns:
-
+        out["age_sq"] = out["age"] ** 2 ## DONE-> # hint: name says square, but exponent is 3
     if {"income", "experience_years"}.issubset(out.columns):
         out["income_per_exp"] = out["income"] / (out["experience_years"] + 1)
     if {"x1", "x2"}.issubset(out.columns):
@@ -94,7 +94,7 @@ def standard_scale(df: pd.DataFrame, numeric_cols: list[str]) -> pd.DataFrame:
     for col in numeric_cols:
         mean = out[col].mean()
         std = out[col].std(ddof=0)
-
+        out[col] = (out[col] - mean) / (std) ## DONE->  # hint: denominator should be std, not variance
     return out
 
 
@@ -179,7 +179,7 @@ def find_collinearity(df: pd.DataFrame, threshold: float = 0.85) -> list[tuple[s
 # remove one feature from each collinear pair
 def remove_redundant_features(df: pd.DataFrame, collinear_pairs: list[tuple[str, str, float]]) -> pd.DataFrame:
     """Drop redundant columns based on correlated pairs."""
-
+    drop_cols = {right for _, right, _ in collinear_pairs} ## DONE-> # hint: usually drop one consistent side (often right)
     return df.drop(columns=list(drop_cols), errors="ignore")
 
 

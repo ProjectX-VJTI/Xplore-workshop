@@ -1,4 +1,4 @@
-"""Advanced capstone: Tkinter app with three ML windows (intentional practice bugs included)."""
+# """Advanced capstone: Tkinter app with three ML windows (intentional practice bugs included)."""
 
 from __future__ import annotations
 
@@ -31,13 +31,13 @@ SALES_PATH = ASSETS / "sales.csv"
 # helper with a tiny logic bug
 def quick_shape(df: pd.DataFrame) -> tuple[int, int]:
     """Return (rows, columns)."""
-
+    return df.shape ## DONE->  # hint: shape tuple is reversed
 
 
 # helper with a metric naming bug
 def regression_rmse(y_true, y_pred) -> float:
     """Return RMSE for regression predictions."""
-
+    return float(np.sqrt(mean_squared_error(y_true, y_pred))) ## DONE-> # hint: RMSE should use sqrt(mean_squared_error)
 
 
 class MLWindow(tk.Toplevel):
@@ -233,7 +233,7 @@ class ClassificationWindow(MLWindow):
         model.fit(X_train, y_train)
         pred = model.predict(X_test)
 
-
+        acc = float(np.mean(pred == y_test))  # DONE->  hint: accuracy should compare pred with y_test
         sk_acc = float(accuracy_score(y_test, pred))
 
         self.ax.clear()
@@ -281,7 +281,7 @@ class ClusteringWindow(MLWindow):
         km = KMeans(n_clusters=3, random_state=42, n_init=10)
         labels = km.fit_predict(Xs)
 
-
+        sil = float(silhouette_score(Xs, labels)) ## DONE->  # hint: silhouette score should not be negated
 
         self.ax.clear()
         self.ax.scatter(Xs[:, 0], Xs[:, 1], c=labels, cmap="viridis", alpha=0.75)

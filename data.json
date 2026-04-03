@@ -5,17 +5,17 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 212,
+                "commits": 213,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "6m": {
-                "commits": 212,
+                "commits": 213,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "3m": {
-                "commits": 212,
+                "commits": 213,
                 "prsOpened": 18,
                 "prsMerged": 17
             }
@@ -106,6 +106,28 @@
                 "commits": 5,
                 "prsOpened": 3,
                 "prsMerged": 2
+            }
+        }
+    },
+    {
+        "login": "aaryanideas28",
+        "avatar_url": "https://avatars.githubusercontent.com/u/230731474?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 1,
+                "prsOpened": 5,
+                "prsMerged": 5
+            },
+            "6m": {
+                "commits": 1,
+                "prsOpened": 5,
+                "prsMerged": 5
+            },
+            "3m": {
+                "commits": 1,
+                "prsOpened": 5,
+                "prsMerged": 5
             }
         }
     },
@@ -270,17 +292,17 @@
         "stats": {
             "all": {
                 "commits": 7,
-                "prsOpened": 3,
+                "prsOpened": 4,
                 "prsMerged": 3
             },
             "6m": {
                 "commits": 7,
-                "prsOpened": 3,
+                "prsOpened": 4,
                 "prsMerged": 3
             },
             "3m": {
                 "commits": 7,
-                "prsOpened": 3,
+                "prsOpened": 4,
                 "prsMerged": 3
             }
         }
@@ -424,17 +446,17 @@
         "stats": {
             "all": {
                 "commits": 7,
-                "prsOpened": 1,
+                "prsOpened": 2,
                 "prsMerged": 1
             },
             "6m": {
                 "commits": 7,
-                "prsOpened": 1,
+                "prsOpened": 2,
                 "prsMerged": 1
             },
             "3m": {
                 "commits": 7,
-                "prsOpened": 1,
+                "prsOpened": 2,
                 "prsMerged": 1
             }
         }
@@ -744,28 +766,6 @@
                 "commits": 0,
                 "prsOpened": 2,
                 "prsMerged": 0
-            }
-        }
-    },
-    {
-        "login": "aaryanideas28",
-        "avatar_url": "https://avatars.githubusercontent.com/u/230731474?v=4",
-        "role": "contributor",
-        "stats": {
-            "all": {
-                "commits": 0,
-                "prsOpened": 5,
-                "prsMerged": 4
-            },
-            "6m": {
-                "commits": 0,
-                "prsOpened": 5,
-                "prsMerged": 4
-            },
-            "3m": {
-                "commits": 0,
-                "prsOpened": 5,
-                "prsMerged": 4
             }
         }
     },

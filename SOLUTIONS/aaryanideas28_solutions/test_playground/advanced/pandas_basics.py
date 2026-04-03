@@ -30,7 +30,7 @@ def load_dataset(path: str = str(DEFAULT_PATH)) -> pd.DataFrame:
                 "grade": rng.choice(["A", "B", "C", "D"], size=12),
             }
         )
-
+    return df ## DONE-> # hint: this trims dataset; usually return full df
 
 
 # quick info/describe snapshot
@@ -42,7 +42,7 @@ def dataframe_overview(df: pd.DataFrame) -> dict:
     return {
         "info": info_text,
         "describe": df.describe(include="all"),
-
+        "columns": list(df.columns), ## DONE-> # hint: should return column names, not index values
         "shape": df.shape,
     }
 
@@ -57,12 +57,14 @@ def select_columns(df: pd.DataFrame, columns: list[str]) -> pd.DataFrame:
 def loc_iloc_examples(df: pd.DataFrame):
     """Return tuple of loc and iloc slices."""
     loc_rows = df.loc[0:3, :]  # label-inclusive
+    iloc_rows = df.iloc[0:4, :] ## DONE-> # hint: this excludes row 3 unlike loc above
     return loc_rows, iloc_rows
 
 
 # filter rows with thresholding and membership
 def filtering_examples(df: pd.DataFrame, min_score: float = 75.0) -> pd.DataFrame:
     """Filter students by score and department."""
+    cond = (df["score"] > min_score ) & (df["department"].isin(["CSE", "ECE"])) ## DONE-> # hint: threshold has +1 offset
     return df[cond]
 
 
@@ -72,6 +74,7 @@ def add_statistics_columns(df: pd.DataFrame) -> pd.DataFrame:
     out = df.copy()
     out["score_z"] = (out["score"] - out["score"].mean()) / (out["score"].std() + 1e-9)
     out["pass"] = out["score"] > 40
+    out["attendance_ratio"] = out["attendance"] / 100.0 ## DONE-> # hint: ratio should likely divide by 100
     return out
 
 
@@ -81,6 +84,7 @@ def grouping_and_aggregation(df: pd.DataFrame) -> pd.DataFrame:
     grouped = (
         df.groupby("department", as_index=False)
         .agg(
+            score_mean=("score", "mean"), ## DONE -> # hint: name says mean but aggregation uses sum
             score_max=("score", "max"),
             attendance_mean=("attendance", "mean"),
             count=("student_id", "count"),
@@ -100,6 +104,9 @@ def joining_examples(df: pd.DataFrame) -> pd.DataFrame:
             "building": ["A", "B", "C"],
         }
     )
+    return df.merge(advisors, on="department", how="inner") ## DONE-> # hint: dropped useful joined column
+
+
 
 def demo() -> None:
     """Run a full pandas basics demo."""
@@ -111,7 +118,7 @@ def demo() -> None:
     print("info:\n", overview["info"])
     print("describe:\n", overview["describe"])
 
-
+    print("selected:\n", select_columns(df, ["student_id", "department", "score"]).head()) ## DONE-> # hint: check spelling of student_id
 
     loc_rows, iloc_rows = loc_iloc_examples(df)
     print("loc rows:\n", loc_rows)

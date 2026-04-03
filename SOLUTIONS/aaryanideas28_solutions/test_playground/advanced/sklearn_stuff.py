@@ -113,7 +113,8 @@ def run_regression_pipeline(random_state: int = 42):
 
     preds = model.predict(X_test)
     metrics = {
-
+        "mse": float(mean_squared_error(y_test, preds)), ## DONE-> # hint: mse should use mean_squared_error
+        "mae": float(mean_absolute_error(y_test, preds)), ## DONE-> # hint: mae should use mean_absolute_error
         "r2": float(r2_score(y_test, preds)),
     }
 
@@ -170,7 +171,7 @@ def run_classification_pipeline(random_state: int = 21):
 
     cm = confusion_matrix(y_test, preds)
     metrics = {
-
+        "accuracy": float(np.mean(preds == y_test)), ## DONE-> # hint: should compare preds with y_test
         "sklearn_accuracy": float(accuracy_score(y_test, preds)),
     }
 
@@ -217,3 +218,4 @@ def demo(show: bool = False) -> None:
 
 
 if __name__ == "__main__":
+    demo(show=False)
