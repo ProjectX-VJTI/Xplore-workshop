@@ -5,19 +5,41 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 199,
+                "commits": 201,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "6m": {
-                "commits": 199,
+                "commits": 201,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "3m": {
-                "commits": 199,
+                "commits": 201,
                 "prsOpened": 18,
                 "prsMerged": 17
+            }
+        }
+    },
+    {
+        "login": "sanvinaik",
+        "avatar_url": "https://avatars.githubusercontent.com/u/217440177?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 5,
+                "prsOpened": 3,
+                "prsMerged": 2
+            },
+            "6m": {
+                "commits": 5,
+                "prsOpened": 3,
+                "prsMerged": 2
+            },
+            "3m": {
+                "commits": 5,
+                "prsOpened": 3,
+                "prsMerged": 2
             }
         }
     },
@@ -216,28 +238,6 @@
                 "commits": 7,
                 "prsOpened": 3,
                 "prsMerged": 3
-            }
-        }
-    },
-    {
-        "login": "sanvinaik",
-        "avatar_url": "https://avatars.githubusercontent.com/u/217440177?v=4",
-        "role": "contributor",
-        "stats": {
-            "all": {
-                "commits": 3,
-                "prsOpened": 3,
-                "prsMerged": 1
-            },
-            "6m": {
-                "commits": 3,
-                "prsOpened": 3,
-                "prsMerged": 1
-            },
-            "3m": {
-                "commits": 3,
-                "prsOpened": 3,
-                "prsMerged": 1
             }
         }
     },
@@ -656,6 +656,28 @@
                 "commits": 12,
                 "prsOpened": 16,
                 "prsMerged": 12
+            }
+        }
+    },
+    {
+        "login": "Onkar-Raskar",
+        "avatar_url": "https://avatars.githubusercontent.com/u/266266362?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 0,
+                "prsOpened": 2,
+                "prsMerged": 0
+            },
+            "6m": {
+                "commits": 0,
+                "prsOpened": 2,
+                "prsMerged": 0
+            },
+            "3m": {
+                "commits": 0,
+                "prsOpened": 2,
+                "prsMerged": 0
             }
         }
     },
