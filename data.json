@@ -5,17 +5,17 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 207,
+                "commits": 208,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "6m": {
-                "commits": 207,
+                "commits": 208,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "3m": {
-                "commits": 207,
+                "commits": 208,
                 "prsOpened": 18,
                 "prsMerged": 17
             }
@@ -40,6 +40,28 @@
                 "commits": 2,
                 "prsOpened": 2,
                 "prsMerged": 1
+            }
+        }
+    },
+    {
+        "login": "pojeesahil",
+        "avatar_url": "https://avatars.githubusercontent.com/u/83576063?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 20,
+                "prsOpened": 4,
+                "prsMerged": 4
+            },
+            "6m": {
+                "commits": 20,
+                "prsOpened": 4,
+                "prsMerged": 4
+            },
+            "3m": {
+                "commits": 20,
+                "prsOpened": 4,
+                "prsMerged": 4
             }
         }
     },
@@ -303,28 +325,6 @@
             "3m": {
                 "commits": 7,
                 "prsOpened": 3,
-                "prsMerged": 3
-            }
-        }
-    },
-    {
-        "login": "pojeesahil",
-        "avatar_url": "https://avatars.githubusercontent.com/u/83576063?v=4",
-        "role": "contributor",
-        "stats": {
-            "all": {
-                "commits": 9,
-                "prsOpened": 4,
-                "prsMerged": 3
-            },
-            "6m": {
-                "commits": 9,
-                "prsOpened": 4,
-                "prsMerged": 3
-            },
-            "3m": {
-                "commits": 9,
-                "prsOpened": 4,
                 "prsMerged": 3
             }
         }
