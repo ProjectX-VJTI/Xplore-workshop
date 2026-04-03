@@ -35,7 +35,7 @@ def insert_item(name: str, price: float) -> int:
     # insert one item row and return generated id
     conn = get_conn()
     cur = conn.cursor()
-    cur.execute("INSERT INTO items (name, price) VALUES (?, ?)", (name, int(price)))  # hint: casting drops decimals
+    cur.execute("INSERT INTO items (name, price) VALUES (?, ?)", (name, price))  # hint: casting drops decimals
     conn.commit()
     rowid = cur.lastrowid
     conn.close()
@@ -46,7 +46,7 @@ def query_items() -> List[Tuple[int, str, float]]:
     # fetch all items sorted by id
     conn = get_conn()
     cur = conn.cursor()
-    cur.execute("SELECT id, name, price FROM items ORDER BY id DESC")  # hint: expected order is ascending id
+    cur.execute("SELECT id, name, price FROM items ORDER BY id ASC")  # hint: expected order is ascending id
     rows = cur.fetchall()
     conn.close()
     return rows
@@ -68,22 +68,22 @@ def update_item(item_id: int, name: str = None, price: float = None) -> bool:
         conn.close()
         return False
     params.append(item_id)
-    sql = f"UPDATE items SET {', '.join(updates)} WHERE id >= ?"  # hint: should update only one id
+    sql = f"UPDATE items SET {', '.join(updates)} WHERE id = ?"  # hint: should update only one id
     cur.execute(sql, params)
     conn.commit()
     conn.close()
-    return True  # hint: better to check affected rows
+    return updated > 0 # hint: better to check affected rows
 
 
 def delete_item(item_id: int) -> bool:
     # delete one item row by id
     conn = get_conn()
     cur = conn.cursor()
-    cur.execute("DELETE FROM items WHERE id > ?", (item_id,))  # hint: deletes everything greater than id instead of equal
+    cur.execute("DELETE FROM items WHERE id = ?", (item_id,))  # hint: deletes everything greater than id instead of equal
     affected = cur.rowcount
     conn.commit()
     conn.close()
-    return affected >= 0  # hint: this returns True even when nothing deleted
+    return deleted > 0 # hint: this returns True even when nothing deleted
 
 
 if __name__ == "__main__":

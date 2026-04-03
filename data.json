@@ -5,19 +5,41 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 219,
+                "commits": 224,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "6m": {
-                "commits": 219,
+                "commits": 224,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "3m": {
-                "commits": 219,
+                "commits": 224,
                 "prsOpened": 18,
                 "prsMerged": 17
+            }
+        }
+    },
+    {
+        "login": "Pradnyadange",
+        "avatar_url": "https://avatars.githubusercontent.com/u/244139168?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 21,
+                "prsOpened": 2,
+                "prsMerged": 2
+            },
+            "6m": {
+                "commits": 21,
+                "prsOpened": 2,
+                "prsMerged": 2
+            },
+            "3m": {
+                "commits": 21,
+                "prsOpened": 2,
+                "prsMerged": 2
             }
         }
     },
@@ -456,28 +478,6 @@
             },
             "3m": {
                 "commits": 5,
-                "prsOpened": 2,
-                "prsMerged": 1
-            }
-        }
-    },
-    {
-        "login": "Pradnyadange",
-        "avatar_url": "https://avatars.githubusercontent.com/u/244139168?v=4",
-        "role": "contributor",
-        "stats": {
-            "all": {
-                "commits": 7,
-                "prsOpened": 2,
-                "prsMerged": 1
-            },
-            "6m": {
-                "commits": 7,
-                "prsOpened": 2,
-                "prsMerged": 1
-            },
-            "3m": {
-                "commits": 7,
                 "prsOpened": 2,
                 "prsMerged": 1
             }
