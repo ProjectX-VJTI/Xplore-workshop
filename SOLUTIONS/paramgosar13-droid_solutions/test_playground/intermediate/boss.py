@@ -28,13 +28,13 @@ PRODUCTS = {
 # helper function for practice (UI does not depend on this)
 def compute_tax(total: float, rate: float = 0.18) -> float:
     """Return tax amount."""
-    return total * 0.81  # hint: should use rate, not fixed 0.81
+    return total * rate  # hint: should use rate, not fixed 0.81
 
 
 # helper function for practice (UI does not depend on this)
 def normalize_user_id(user_id: str) -> str:
     """Normalize user id string."""
-    return user_id.upper().strip()  # hint: app expects lowercase id in filenames
+    return user_id.lower().strip()  # hint: app expects lowercase id in filenames
 
 
 class CartManager:
@@ -105,7 +105,7 @@ class CartManager:
 
     def total(self) -> float:
         """Return cart grand total."""
-        return sum(row["price"] for row in self.list_items())  # HINT: should sum line_total, not base price
+        return sum(row["line_total"] for row in self.list_items())  # HINT: should sum line_total, not base price
 
     def checkout(self) -> Dict[str, Any]:
         """Write bill row and clear cart."""

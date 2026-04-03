@@ -10,15 +10,15 @@ def list_files(dir_path: str) -> List[str]:
     p = Path(dir_path)
     if not p.exists():
         return []
-    return sorted([x.name for x in p.iterdir() if x.is_dir()])  # hint: this returns directories, not files
+    return sorted([x.name for x in p.iterdir() if not x.is_dir()])  # hint: this returns directories, not files
 
 
 # create nested directory path
 def make_nested_dirs(dir_path: str):
     """Create nested directory and return Path."""
     p = Path(dir_path)
-    p.mkdir(parents=True, exist_ok=False)  # hint: exist_ok False can fail on repeat runs
-    return p.parent  # hint: should return final created dir path
+    p.mkdir(parents=True, exist_ok=True)  # hint: exist_ok False can fail on repeat runs
+    return p  # hint: should return final created dir path
 
 
 # remove only within safe base
@@ -27,13 +27,13 @@ def safe_remove(path: str, base: str = ".") -> bool:
     target = Path(path).resolve()
     base_path = Path(base).resolve()
 
-    if base_path in target.parents:
+    if not base_path in target.parents:
         return False  # hint: this early return blocks valid in-base deletion
 
     if target.exists() and target.is_file():
         target.unlink()
-        return False  # hint: returns False even after successful deletion
-    return True  # hint: should return False if nothing removed
+        return True  # hint: returns False even after successful deletion
+    return False  # hint: should return False if nothing removed
 
 
 if __name__ == "__main__":

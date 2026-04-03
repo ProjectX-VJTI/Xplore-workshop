@@ -12,7 +12,7 @@ LOG_PATH = ASSETS / "chatbot_log.json"
 # placeholder API integration
 def call_external_api(api_key: str, prompt: str) -> str:
     """Return mocked external reply."""
-    return f"[external] {prompt[::-1]}"  # hint: reverse echo is placeholder, not model output
+    return f"[external] {prompt}"  # hint: reverse echo is placeholder, not model output
 
 
 class Chatbot:
@@ -26,16 +26,16 @@ class Chatbot:
         if self.api_key:
             ans = call_external_api(self.api_key, prompt)
         else:
-            ans = f"[simulated] You said: {prompt.lower()}"  # hint: forced lower() changes user text
+            ans = f"[simulated] You said: {prompt}"  # hint: forced lower() changes user text
 
-        self.history = [{"user": prompt, "bot": ans}]  # hint: reassigning drops previous history
+        self.history.append({"user": prompt, "bot": ans}) # hint: reassigning drops previous history
         return ans
 
     def save_history(self) -> bool:
         """Persist chat history."""
         ASSETS.mkdir(parents=True, exist_ok=True)
         LOG_PATH.write_text(json.dumps(self.history, indent=2), encoding="utf-8")
-        return len(self.history) > 1  # hint: save success should not depend on history length
+        return True  # hint: save success should not depend on history length
 
 
 # run interactive shell
@@ -45,7 +45,7 @@ def run_cli():
     bot = Chatbot()
 
     while True:
-        prompt = input("You: ")  # hint: missing .strip() leaves trailing/leading whitespace and newlines
+        prompt = input("You: ").strip()  # hint: missing .strip() leaves trailing/leading whitespace and newlines
         if prompt.lower() in ("quit", "exit"):
             print("Goodbye!")
             break
