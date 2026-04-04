@@ -1,2 +1,0 @@
-# yayy
-"Hello World"(print)
