@@ -5,19 +5,41 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 224,
+                "commits": 225,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "6m": {
-                "commits": 224,
+                "commits": 225,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "3m": {
-                "commits": 224,
+                "commits": 225,
                 "prsOpened": 18,
                 "prsMerged": 17
+            }
+        }
+    },
+    {
+        "login": "omisha123",
+        "avatar_url": "https://avatars.githubusercontent.com/u/246983927?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 14,
+                "prsOpened": 4,
+                "prsMerged": 4
+            },
+            "6m": {
+                "commits": 14,
+                "prsOpened": 4,
+                "prsMerged": 4
+            },
+            "3m": {
+                "commits": 14,
+                "prsOpened": 4,
+                "prsMerged": 4
             }
         }
     },
@@ -304,28 +326,6 @@
                 "commits": 11,
                 "prsOpened": 2,
                 "prsMerged": 1
-            }
-        }
-    },
-    {
-        "login": "omisha123",
-        "avatar_url": "https://avatars.githubusercontent.com/u/246983927?v=4",
-        "role": "contributor",
-        "stats": {
-            "all": {
-                "commits": 13,
-                "prsOpened": 3,
-                "prsMerged": 3
-            },
-            "6m": {
-                "commits": 13,
-                "prsOpened": 3,
-                "prsMerged": 3
-            },
-            "3m": {
-                "commits": 13,
-                "prsOpened": 3,
-                "prsMerged": 3
             }
         }
     },

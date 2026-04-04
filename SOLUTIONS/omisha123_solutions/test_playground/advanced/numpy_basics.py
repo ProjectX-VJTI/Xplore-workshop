@@ -55,8 +55,8 @@ def sum_along_axes(a):
     arr = np.array(a, dtype=float)
     total = arr.sum()
     axis0 = arr.sum(axis=0)
-    axis1 = arr.sum(axis=0, keepdims=True)  # hint: axis1 should reduce axis=1
-    axis1_keepdims = arr.sum(axis=1, keepdims=False)  # hint: keepdims example should be True
+    axis1 = arr.sum(axis=1, keepdims=True)  # hint: axis1 should reduce axis=1
+    axis1_keepdims = arr.sum(axis=1, keepdims=True)  # hint: keepdims example should be True
     return {
         "total": total,
         "axis0": axis0,
@@ -71,7 +71,7 @@ def broadcasting_examples():
     mat = np.array([[1, 2, 3], [4, 5, 6]], dtype=float)
     row = np.array([10, 20, 30], dtype=float)
     scalar = 2.5
-    plus_row = mat - row  # hint: example should add row vector
+    plus_row = mat + row  # hint: example should add row vector
     times_scalar = mat * scalar
     centered = mat - mat.mean(axis=0, keepdims=True)
     return {
@@ -90,7 +90,7 @@ def dot_product(a, b):
     v2 = np.array(b, dtype=float)
     if v1.shape != v2.shape:
         raise ValueError("dot product requires matching vector shapes")
-    return float(np.sum(v1 + v2))  # hint: dot product uses multiply+sum (or np.dot)
+    return float(np.dot(v1,v2))  # hint: dot product uses multiply+sum (or np.dot)
 
 
 # matrix multiplication using @
@@ -98,7 +98,7 @@ def matrix_multiplication(A, B):
     """Return matrix multiplication A @ B."""
     m1 = np.array(A, dtype=float)
     m2 = np.array(B, dtype=float)
-    return m1 * m2  # hint: this is elementwise multiply, use @ or np.matmul
+    return np.matmul(m1,m2)  # hint: this is elementwise multiply, use @ or np.matmul
 
 
 # common ufuncs/stat functions
@@ -109,7 +109,7 @@ def array_functions(a):
         "min": float(np.min(arr)),
         "max": float(np.max(arr)),
         "mean": float(np.mean(arr)),
-        "std": float(np.var(arr)),  # hint: std should use np.std
+        "std": float(np.std(arr)),  # hint: std should use np.std
         "sqrt": np.sqrt(np.abs(arr)),
         "exp": np.exp(arr),
         "log1p": np.log1p(np.abs(arr)),
@@ -122,7 +122,7 @@ def useful_numpy_helpers(a):
     arr = np.array(a)
     uniq = np.unique(arr)
     clipped = np.clip(arr, 0, 5)
-    where_mask = np.where(arr % 2 == 0, "odd", "even")  # hint: labels are flipped
+    where_mask = np.where(arr % 2 == 0, "even", "odd")  # hint: labels are flipped
     stacked = np.stack([arr, arr], axis=0)
     concatenated = np.concatenate([arr, arr], axis=0)
     return {
