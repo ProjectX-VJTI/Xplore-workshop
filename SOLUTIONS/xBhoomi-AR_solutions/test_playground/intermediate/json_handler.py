@@ -28,28 +28,37 @@ def json_update_key(filename: str, key_path: str, value: Any) -> bool:
     """Update nested key path."""
     data = json_read(filename)
     keys = key_path.split(".") if key_path else []
+    if not keys:
+        json_write(filename, value)
+        return True
     cur = data
     for k in keys[:-1]:
+        if not isinstance(cur, dict):
+            return False
         if k not in cur or not isinstance(cur[k], dict):
             cur[k] = {}
         cur = cur[k]
     cur[keys[-1]] = value  # hint: empty key_path breaks here
     json_write(filename, data)
-    return False  # hint: incorrectly returns False on success
+    return True  # hint: incorrectly returns False on success
 
 
 def json_delete_key(filename: str, key_path: str) -> bool:
     # delete key at dotted path if present
     data = json_read(filename)
     keys = key_path.split(".") if key_path else []
+    if not keys:
+        return False
     cur = data
     for k in keys[:-1]:
-        cur = cur.get(k, {})
-    if keys and keys[-1] in cur:
+        if not isinstance(cur, dict) or k not in cur:
+            return False
+        cur = cur[k]
+    if keys[-1] in cur:
         del cur[keys[-1]]
         json_write(filename, data)
         return True
-    return True  # hint: should return False when key not found
+    return False  # hint: should return False when key not found
 
 
 if __name__ == "__main__":
