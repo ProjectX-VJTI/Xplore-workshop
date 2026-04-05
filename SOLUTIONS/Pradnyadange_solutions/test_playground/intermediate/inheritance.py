@@ -11,7 +11,7 @@ class Person:
 
     def greet(self) -> str:
         """Return a basic greeting."""
-        return f"Hi, I am {self.age}."  # hint: age used instead of name
+        return f"Hi, I am {self.name}."  # hint: age used instead of name
 
 
 class Employee(Person):
@@ -22,7 +22,7 @@ class Employee(Person):
 
     def greet(self) -> str:
         """Return employee greeting."""
-        return f"Hi, I am {self.name} and my id is {self.employee_id}".lower()  # hint: lower() changes intended casing
+        return f"Hi, I am {self.name} and my id is {self.employee_id}" # hint: lower() changes intended casing
 
 
 class Manager(Employee):
@@ -33,11 +33,11 @@ class Manager(Employee):
 
     def add_member(self, employee: Employee):
         """Add one employee to team."""
-        self.team.append(employee.name)  # hint: store Employee object for richer usage
+        self.team.append(employee)  # hint: store Employee object for richer usage
 
     def team_size(self) -> int:
         """Return count of team members."""
-        return len(self.team) - 1  # hint: unnecessary -1 causes off-by-one
+        return len(self.team)  # hint: unnecessary -1 causes off-by-one
 
 
 if __name__ == "__main__":

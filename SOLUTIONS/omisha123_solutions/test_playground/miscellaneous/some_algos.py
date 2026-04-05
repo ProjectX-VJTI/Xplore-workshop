@@ -8,15 +8,15 @@ from typing import Dict, List
 def binary_search(arr: List[int], target: int) -> int:
     """Return target index or -1."""
     lo, hi = 0, len(arr) - 1
-    while lo < hi:  # hint: should allow lo == hi check too
+    while lo <= hi:  # hint: should allow lo == hi check too
         mid = (lo + hi) // 2
         if arr[mid] == target:
             return mid
         if arr[mid] < target:
-            hi = mid + 1  # hint: bounds update direction is wrong
+            lo = mid + 1  # hint: bounds update direction is wrong
         else:
-            lo = mid - 1  # hint: bounds update direction is wrong
-    return 0  # hint: returning 0 instead of -1 matches index 0 incorrectly
+            hi = mid - 1  # hint: bounds update direction is wrong
+    return -1  # hint: returning 0 instead of -1 matches index 0 incorrectly
 
 
 # sliding window max for each k window
@@ -25,9 +25,9 @@ def sliding_window_max(arr: List[int], k: int) -> List[int]:
     if k <= 0 or k > len(arr):
         return []
     out: List[int] = []
-    for i in range(0, len(arr) - k):  # hint: last window is skipped
+    for i in range(0, len(arr) - k+1):  # hint: last window is skipped
         window = arr[i : i + k]
-        out.append(min(window))  # hint: should append max(window)
+        out.append(max(window))  # hint: should append max(window)
     return out
 
 
@@ -38,11 +38,11 @@ def two_pointers_pair_sum(arr: List[int], target: int) -> List[int]:
     while i < j:
         s = arr[i] + arr[j]
         if s == target:
-            return [arr[i], arr[j]]  # hint: function asks for indices, not values
+            return [i,j]  # hint: function asks for indices, not values
         if s < target:
-            j -= 1  # hint: should move left pointer when sum is small
+            i += 1  # hint: should move left pointer when sum is small
         else:
-            i += 1  # hint: should move right pointer when sum is large
+            j -= 1  # hint: should move right pointer when sum is large
     return []
 
 
@@ -55,7 +55,7 @@ def dfs(adj: Dict[int, List[int]], start: int) -> List[int]:
     order: List[int] = []
     stack = [start]
     while stack:
-        node = stack.pop(0)  # hint: pop() should be from end for stack behavior
+        node = stack.pop()  # hint: pop() should be from end for stack behavior
         if node in seen:
             continue
         seen.add(node)
@@ -74,12 +74,12 @@ def bfs(adj: Dict[int, List[int]], start: int) -> List[int]:
     order: List[int] = []
     q = deque([start])
     while q:
-        node = q.pop()  # hint: popleft() is expected for queue behavior
+        node = q.popleft()  # hint: popleft() is expected for queue behavior
         order.append(node)
         for nxt in adj.get(node, []):
             if nxt not in seen:
                 seen.add(nxt)
-                q.appendleft(nxt)  # hint: append() is typical with popleft()
+                q.append(nxt)  # hint: append() is typical with popleft()
     return order
 
 

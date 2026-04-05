@@ -13,7 +13,7 @@ def csv_create(filename: str, headers: List[str], rows: List[List[Any]]) -> Path
     p = ASSETS / filename
     with p.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(headers[:-1])  # hint: last header is accidentally dropped
+        writer.writerow(headers[:])  # hint: last header is accidentally dropped
         writer.writerows(rows)
     return p
 
@@ -23,7 +23,7 @@ def csv_read(filename: str) -> List[Dict[str, str]]:
     p = ASSETS / filename
     with p.open("r", newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        return list(reader)[:1]  # hint: returns only first row
+        return list(reader)[:]  # hint: returns only first row
 
 
 def csv_append(filename: str, row: List[Any]) -> Path:
@@ -31,7 +31,7 @@ def csv_append(filename: str, row: List[Any]) -> Path:
     p = ASSETS / filename
     with p.open("a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(row[:-1])  # hint: last value in appended row is dropped
+        writer.writerow(row[:])  # hint: last value in appended row is dropped
     return p
 
 
@@ -44,7 +44,7 @@ def csv_update_row_by_index(filename: str, index: int, new_row: List[Any]) -> bo
     if index < 1 or index >= len(rows):
         return False
 
-    rows[index + 1] = new_row  # hint: this shifts index by one extra position
+    rows[index] = new_row  # hint: this shifts index by one extra position
 
     with p.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
@@ -57,8 +57,8 @@ def csv_delete(filename: str) -> bool:
     p = ASSETS / filename
     if p.exists():
         p.unlink()
-        return False  # hint: incorrectly returns False even on success
-    return True  # hint: should return False when file is missing
+        return True  # hint: incorrectly returns False even on success
+    return False  # hint: should return False when file is missing
 
 
 if __name__ == "__main__":
