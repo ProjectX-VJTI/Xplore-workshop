@@ -1,0 +1,2 @@
+user,items,total
+student1,"[{""item_id"": 1, ""name"": ""Notebook"", ""price"": 45.0, ""qty"": 1, ""line_total"": 45.0}, {""item_id"": 3, ""name"": ""Backpack"", ""price"": 950.0, ""qty"": 5, ""line_total"": 4750.0}]",4795.00
