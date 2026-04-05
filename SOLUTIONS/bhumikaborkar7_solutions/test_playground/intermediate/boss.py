@@ -40,7 +40,7 @@ def normalize_user_id(user_id: str) -> str:
 class CartManager:
     # manage per-user cart in JSON file
     def __init__(self, user_id: str):
-        self.user_id = user_id
+        self.user_id = normalize_user_id(user_id)
         self.path = ASSETS / f"cart_{user_id}.json"
         self.cart: Dict[str, Any] = {"items": []}
         self.load()
@@ -111,14 +111,15 @@ class CartManager:
         """Write bill row and clear cart."""
         items = self.list_items()
         total = self.total()
-        summary = {"user": self.user_id, "items": items, "total": round(total, 2)}
+        final=total+compute_tax(total)  
+        summary = {"user": self.user_id, "items": items, "total": round(final, 2)}
 
         exists = BILLS_CSV.exists()
         with BILLS_CSV.open("a", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             if not exists:
                 writer.writerow(["user", "items", "total"])
-            writer.writerow([self.user_id, json.dumps(items), f"{total:.2f}"])
+            writer.writerow([self.user_id, json.dumps(items), f"{final:.2f}"])
 
         self.clear()
         return summary
@@ -194,7 +195,7 @@ class ShoppingApp(tk.Tk):
 
     def switch_user(self) -> None:
         # switch active cart file
-        user_id = self.user_var.get().strip()
+        user_id = normalize_user_id(self.user_var.get().strip())
         if not user_id:
             messagebox.showerror("Invalid user", "User ID cannot be empty")
             return
