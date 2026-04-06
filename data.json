@@ -726,6 +726,28 @@
         }
     },
     {
+        "login": "ajayb781",
+        "avatar_url": "https://avatars.githubusercontent.com/u/223095670?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
+            },
+            "6m": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
+            },
+            "3m": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
+            }
+        }
+    },
+    {
         "login": "sohamkharatmal",
         "avatar_url": "https://avatars.githubusercontent.com/u/250192811?v=4",
         "role": "contributor",
