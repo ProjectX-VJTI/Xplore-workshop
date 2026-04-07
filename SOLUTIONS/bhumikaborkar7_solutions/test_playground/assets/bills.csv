@@ -1,2 +1,4 @@
 user,items,total
 student1,"[{""item_id"": 2, ""name"": ""Pen Pack"", ""price"": 20.0, ""qty"": 1, ""line_total"": 20.0}]",20.00
+student1,"[{""item_id"": 1, ""name"": ""Notebook"", ""price"": 45.0, ""qty"": 1, ""line_total"": 45.0}, {""item_id"": 2, ""name"": ""Pen Pack"", ""price"": 20.0, ""qty"": 1, ""line_total"": 20.0}]",76.70
+student1,"[{""item_id"": 2, ""name"": ""Pen Pack"", ""price"": 20.0, ""qty"": 1, ""line_total"": 20.0}]",23.60
