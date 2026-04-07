@@ -5,19 +5,41 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 229,
+                "commits": 231,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "6m": {
-                "commits": 229,
+                "commits": 231,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "3m": {
-                "commits": 229,
+                "commits": 231,
                 "prsOpened": 18,
                 "prsMerged": 17
+            }
+        }
+    },
+    {
+        "login": "ajayb781",
+        "avatar_url": "https://avatars.githubusercontent.com/u/223095670?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 1,
+                "prsOpened": 2,
+                "prsMerged": 1
+            },
+            "6m": {
+                "commits": 1,
+                "prsOpened": 2,
+                "prsMerged": 1
+            },
+            "3m": {
+                "commits": 1,
+                "prsOpened": 2,
+                "prsMerged": 1
             }
         }
     },
@@ -28,17 +50,17 @@
         "stats": {
             "all": {
                 "commits": 6,
-                "prsOpened": 5,
+                "prsOpened": 6,
                 "prsMerged": 4
             },
             "6m": {
                 "commits": 6,
-                "prsOpened": 5,
+                "prsOpened": 6,
                 "prsMerged": 4
             },
             "3m": {
                 "commits": 6,
-                "prsOpened": 5,
+                "prsOpened": 6,
                 "prsMerged": 4
             }
         }
@@ -726,23 +748,45 @@
         }
     },
     {
-        "login": "ajayb781",
-        "avatar_url": "https://avatars.githubusercontent.com/u/223095670?v=4",
+        "login": "akshitamahapatra703-gif",
+        "avatar_url": "https://avatars.githubusercontent.com/u/234328857?v=4",
         "role": "contributor",
         "stats": {
             "all": {
                 "commits": 0,
-                "prsOpened": 2,
+                "prsOpened": 1,
                 "prsMerged": 0
             },
             "6m": {
                 "commits": 0,
-                "prsOpened": 2,
+                "prsOpened": 1,
                 "prsMerged": 0
             },
             "3m": {
                 "commits": 0,
-                "prsOpened": 2,
+                "prsOpened": 1,
+                "prsMerged": 0
+            }
+        }
+    },
+    {
+        "login": "merchantshubhi",
+        "avatar_url": "https://avatars.githubusercontent.com/u/263313285?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
+            },
+            "6m": {
+                "commits": 0,
+                "prsOpened": 1,
+                "prsMerged": 0
+            },
+            "3m": {
+                "commits": 0,
+                "prsOpened": 1,
                 "prsMerged": 0
             }
         }
