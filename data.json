@@ -292,17 +292,17 @@
         "stats": {
             "all": {
                 "commits": 1,
-                "prsOpened": 5,
+                "prsOpened": 6,
                 "prsMerged": 5
             },
             "6m": {
                 "commits": 1,
-                "prsOpened": 5,
+                "prsOpened": 6,
                 "prsMerged": 5
             },
             "3m": {
                 "commits": 1,
-                "prsOpened": 5,
+                "prsOpened": 6,
                 "prsMerged": 5
             }
         }
