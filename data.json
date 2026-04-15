@@ -5,19 +5,41 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 235,
+                "commits": 236,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "6m": {
-                "commits": 235,
+                "commits": 236,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "3m": {
-                "commits": 235,
+                "commits": 236,
                 "prsOpened": 18,
                 "prsMerged": 17
+            }
+        }
+    },
+    {
+        "login": "dudpatil07",
+        "avatar_url": "https://avatars.githubusercontent.com/u/261619061?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 14,
+                "prsOpened": 3,
+                "prsMerged": 2
+            },
+            "6m": {
+                "commits": 14,
+                "prsOpened": 3,
+                "prsMerged": 2
+            },
+            "3m": {
+                "commits": 14,
+                "prsOpened": 3,
+                "prsMerged": 2
             }
         }
     },
@@ -655,28 +677,6 @@
             "3m": {
                 "commits": 1,
                 "prsOpened": 2,
-                "prsMerged": 1
-            }
-        }
-    },
-    {
-        "login": "dudpatil07",
-        "avatar_url": "https://avatars.githubusercontent.com/u/261619061?v=4",
-        "role": "contributor",
-        "stats": {
-            "all": {
-                "commits": 12,
-                "prsOpened": 3,
-                "prsMerged": 1
-            },
-            "6m": {
-                "commits": 12,
-                "prsOpened": 3,
-                "prsMerged": 1
-            },
-            "3m": {
-                "commits": 12,
-                "prsOpened": 3,
                 "prsMerged": 1
             }
         }

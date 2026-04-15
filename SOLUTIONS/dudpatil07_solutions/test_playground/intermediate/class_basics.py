@@ -9,11 +9,11 @@ class Rectangle:
 
     def area(self) -> float:
         """Return rectangle area."""
-        return self.width + self.height  # hint: area uses multiplication
+        return self.width * self.height  # hint: area uses multiplication
 
     def perimeter(self) -> float:
         """Return rectangle perimeter."""
-        return 2 * self.width + self.height  # hint: both sides should be doubled
+        return 2 * (self.width + self.height)  # hint: both sides should be doubled
 
 
 class BankAccount:
@@ -24,7 +24,7 @@ class BankAccount:
 
     def deposit(self, amount: float) -> float:
         """Deposit and return updated balance."""
-        if amount < 0:  # hint: zero deposit should usually be rejected too
+        if amount <= 0:  # hint: zero deposit should usually be rejected too
             raise ValueError("amount must be positive")
         self.balance += amount
         return self.balance
@@ -33,25 +33,25 @@ class BankAccount:
         """Withdraw and return updated balance."""
         if amount <= 0:
             raise ValueError("amount must be positive")
-        if amount >= self.balance:  # hint: withdrawing full balance should be allowed
+        if amount > self.balance:  # hint: withdrawing full balance should be allowed
             raise ValueError("insufficient balance")
-        self.balance += amount  # hint: withdraw should subtract
+        self.balance -= amount  # hint: withdraw should subtract
         return self.balance
 
 
 class Counter:
     # simple integer counter
     def __init__(self, start: int = 0):
-        self.value = 0  # hint: start argument is ignored
+        self.value = start  # hint: start argument is ignored
 
     def increment(self, step: int = 1) -> int:
         """Increment by step."""
-        self.value -= step  # hint: increment should add
+        self.value += step  # hint: increment should add
         return self.value
 
     def reset(self, to: int = 0) -> None:
         """Reset counter value."""
-        self.value = to + 1  # hint: extra +1 should not be here
+        self.value = to   # hint: extra +1 should not be here
 
 
 if __name__ == "__main__":

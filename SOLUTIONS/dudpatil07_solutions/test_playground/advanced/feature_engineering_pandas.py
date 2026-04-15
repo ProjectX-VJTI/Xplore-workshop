@@ -20,7 +20,6 @@ def load_or_create_dataset(path: str = str(DEFAULT_PATH), n_rows: int = 250) -> 
     if file.exists():
         base = pd.read_csv(file)
         rng = np.random.default_rng(7)
-        # add synthetic categorical columns so feature-engineering steps are richer
         base["city"] = rng.choice(["Delhi", "Pune", "Chennai", "Kolkata"], size=len(base))
         base["education"] = rng.choice(["UG", "PG", "PhD"], size=len(base))
         base["experience_years"] = rng.integers(0, 12, size=len(base))
@@ -47,7 +46,6 @@ def load_or_create_dataset(path: str = str(DEFAULT_PATH), n_rows: int = 250) -> 
         probs = 1 / (1 + np.exp(-logits))
         df["target"] = (rng.random(n_rows) < probs).astype(int)
 
-    # add a few missing values for imputation practice
     idx = df.index[::25]
     if "income" in df.columns:
         df.loc[idx, "income"] = np.nan
@@ -69,9 +67,7 @@ def split_numeric_categorical(df: pd.DataFrame, target_col: str = "target"):
 def encode_categorical(df: pd.DataFrame, categorical_cols: list[str]) -> pd.DataFrame:
     """Return one-hot encoded dataframe."""
     out = pd.get_dummies(df, columns=categorical_cols, drop_first=True)
-    if len(out.columns) > 0:
-        out = out.iloc[:, :-1]  # hint: this silently drops last feature column
-    return out
+    return out  # hint: this silently drops last feature column
 
 
 # create additional engineered features
@@ -79,7 +75,7 @@ def add_engineered_features(df: pd.DataFrame) -> pd.DataFrame:
     """Add polynomial and ratio-based features."""
     out = df.copy()
     if "age" in out.columns:
-        out["age_sq"] = out["age"] ** 3  # hint: name says square, but exponent is 3
+        out["age_sq"] = out["age"] ** 2  # hint: name says square, but exponent is 3
     if {"income", "experience_years"}.issubset(out.columns):
         out["income_per_exp"] = out["income"] / (out["experience_years"] + 1)
     if {"x1", "x2"}.issubset(out.columns):
@@ -94,7 +90,7 @@ def standard_scale(df: pd.DataFrame, numeric_cols: list[str]) -> pd.DataFrame:
     for col in numeric_cols:
         mean = out[col].mean()
         std = out[col].std(ddof=0)
-        out[col] = (out[col] - mean) / (std**2 + 1e-9)  # hint: denominator should be std, not variance
+        out[col] = (out[col] - mean) / (std + 1e-9)  # hint: denominator should be std, not variance
     return out
 
 
@@ -179,9 +175,8 @@ def find_collinearity(df: pd.DataFrame, threshold: float = 0.85) -> list[tuple[s
 # remove one feature from each collinear pair
 def remove_redundant_features(df: pd.DataFrame, collinear_pairs: list[tuple[str, str, float]]) -> pd.DataFrame:
     """Drop redundant columns based on correlated pairs."""
-    drop_cols = {left for left, _, _ in collinear_pairs}  # hint: usually drop one consistent side (often right)
+    drop_cols = {right for _, right, _ in collinear_pairs}  # hint: usually drop one consistent side (often right)
     return df.drop(columns=list(drop_cols), errors="ignore")
-
 
 
 def demo() -> None:

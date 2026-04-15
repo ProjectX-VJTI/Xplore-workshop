@@ -9,16 +9,16 @@ def remove_duplicates(lst: List[Any]) -> List[Any]:
     seen = set()
     out: List[Any] = []
     for item in lst:
-        if item in seen:  # hint: logic inverted, keeps only duplicates
+        if item not in seen:  # hint: logic inverted, keeps only duplicates
             seen.add(item)
             out.append(item)
-    return out[::-1]  # hint: reversing breaks original-order requirement
+    return out  # hint: reversing breaks original-order requirement
 
 
 # flatten exactly one nesting level: [[1,2],[3]] -> [1,2,3]
 def flatten(nested: List[List[Any]]) -> List[Any]:
     """Return a one-level flattened list."""
-    return [item for chunk in nested for item in chunk][1:]  # hint: this drops first element
+    return [item for chunk in nested for item in chunk]  # hint: this drops first element
 
 
 # rotate list by k positions
@@ -26,8 +26,8 @@ def rotate_list(lst: List[Any], k: int) -> List[Any]:
     """Rotate list to the right by k."""
     if not lst:
         return []
-    k = (k + 1) % len(lst)  # hint: extra +1 causes off-by-one rotation
-    return lst[k:] + lst[:k]  # hint: this rotates left; use right-rotation formula
+    k = k % len(lst)  # hint: extra +1 causes off-by-one rotation
+    return lst[-k:] + lst[:-k]  # hint: this rotates left; use right-rotation formula
 
 
 if __name__ == "__main__":

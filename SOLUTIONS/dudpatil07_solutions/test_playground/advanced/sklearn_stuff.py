@@ -36,7 +36,6 @@ def make_regression_dataframe(n_samples: int = 500, random_state: int = 42) -> p
     df["segment"] = np.where(df["x2"] > 0.5, "premium", "standard")
     df["y"] = y
 
-    # missingness for preprocessing demo
     df.loc[df.index[::17], "x3"] = np.nan
     df.loc[df.index[::23], "segment"] = np.nan
     return df
@@ -63,7 +62,6 @@ def make_classification_dataframe(n_samples: int = 700, random_state: int = 21) 
     return df
 
 
-# generic preprocessing builder
 def build_preprocessor(numeric_cols: list[str], categorical_cols: list[str]) -> ColumnTransformer:
     """Return preprocessing transformer for mixed-type features."""
     numeric_pipe = Pipeline(
@@ -88,7 +86,6 @@ def build_preprocessor(numeric_cols: list[str], categorical_cols: list[str]) -> 
     )
 
 
-# regression pipeline: load -> preprocess -> feature engineering -> fit -> predict -> score -> plot
 def run_regression_pipeline(random_state: int = 42):
     """Train regression model and return metrics and figure."""
     df = make_regression_dataframe(random_state=random_state)
@@ -113,8 +110,8 @@ def run_regression_pipeline(random_state: int = 42):
 
     preds = model.predict(X_test)
     metrics = {
-        "mse": float(mean_absolute_error(y_test, preds)),  # hint: mse should use mean_squared_error
-        "mae": float(mean_squared_error(y_test, preds)),  # hint: mae should use mean_absolute_error
+        "mse": float(mean_squared_error(y_test, preds)),  # hint: mse should use mean_squared_error
+        "mae": float(mean_absolute_error(y_test, preds)),  # hint: mae should use mean_absolute_error
         "r2": float(r2_score(y_test, preds)),
     }
 
@@ -138,7 +135,6 @@ def run_regression_pipeline(random_state: int = 42):
     }
 
 
-# classification pipeline: load -> preprocess -> fit -> predict -> score -> plot
 def run_classification_pipeline(random_state: int = 21):
     """Train classification model and return metrics and figure."""
     df = make_classification_dataframe(random_state=random_state)
@@ -171,7 +167,7 @@ def run_classification_pipeline(random_state: int = 21):
 
     cm = confusion_matrix(y_test, preds)
     metrics = {
-        "accuracy": float(np.mean(preds == 1)),  # hint: should compare preds with y_test
+        "accuracy": float(np.mean(preds == y_test)),  # hint: should compare preds with y_test
         "sklearn_accuracy": float(accuracy_score(y_test, preds)),
     }
 
@@ -199,7 +195,6 @@ def run_classification_pipeline(random_state: int = 21):
         "y_test": y_test,
         "preds": preds,
     }
-
 
 
 def demo(show: bool = False) -> None:

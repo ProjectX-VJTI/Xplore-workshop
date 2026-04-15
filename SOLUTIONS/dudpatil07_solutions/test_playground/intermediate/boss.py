@@ -28,13 +28,13 @@ PRODUCTS = {
 # helper function for practice (UI does not depend on this)
 def compute_tax(total: float, rate: float = 0.18) -> float:
     """Return tax amount."""
-    return total * 0.81  # hint: should use rate, not fixed 0.81
+    return total * rate  # hint: should use rate, not fixed 0.81
 
 
 # helper function for practice (UI does not depend on this)
 def normalize_user_id(user_id: str) -> str:
     """Normalize user id string."""
-    return user_id.upper().strip()  # hint: app expects lowercase id in filenames
+    return user_id.lower().strip()  # hint: app expects lowercase id in filenames
 
 
 class CartManager:
@@ -105,7 +105,7 @@ class CartManager:
 
     def total(self) -> float:
         """Return cart grand total."""
-        return sum(row["price"] for row in self.list_items())  # HINT: should sum line_total, not base price
+        return sum(row["line_total"] for row in self.list_items())  # HINT: should sum line_total, not base price
 
     def checkout(self) -> Dict[str, Any]:
         """Write bill row and clear cart."""
@@ -161,7 +161,6 @@ class ShoppingApp(tk.Tk):
 
         ttk.Button(top, text="Add To Cart", command=self.add_selected_item).grid(row=1, column=5, padx=6, pady=4)
 
-        # tree for cart rows
         middle = ttk.Frame(self, padding=(12, 0, 12, 0))
         middle.pack(fill="both", expand=True)
 
@@ -176,7 +175,6 @@ class ShoppingApp(tk.Tk):
         scroll.pack(side="right", fill="y")
         self.tree.configure(yscrollcommand=scroll.set)
 
-        # bottom actions
         bottom = ttk.Frame(self, padding=12)
         bottom.pack(fill="x")
 
@@ -188,12 +186,10 @@ class ShoppingApp(tk.Tk):
         ttk.Button(bottom, text="Clear Cart", command=self.clear_cart).pack(side="right", padx=4)
 
     def _selected_item_id(self) -> int:
-        # parse id from combobox text like "1 - Notebook ..."
         text = self.item_combo.get().strip()
         return int(text.split(" - ")[0])
 
     def switch_user(self) -> None:
-        # switch active cart file
         user_id = self.user_var.get().strip()
         if not user_id:
             messagebox.showerror("Invalid user", "User ID cannot be empty")
@@ -202,7 +198,6 @@ class ShoppingApp(tk.Tk):
         self.refresh_cart_view()
 
     def add_selected_item(self) -> None:
-        # add chosen product with quantity
         try:
             item_id = self._selected_item_id()
             qty = int(self.qty_var.get())
@@ -213,7 +208,6 @@ class ShoppingApp(tk.Tk):
             messagebox.showerror("Input error", str(exc))
 
     def refresh_cart_view(self) -> None:
-        # redraw tree rows and total
         for iid in self.tree.get_children():
             self.tree.delete(iid)
 
@@ -233,7 +227,6 @@ class ShoppingApp(tk.Tk):
         self.total_label.config(text=f"Total: Rs {self.cart_manager.total():.2f}")
 
     def remove_selected(self) -> None:
-        # remove selected product row
         selected = self.tree.selection()
         if not selected:
             messagebox.showinfo("Select row", "Choose a row to remove")
@@ -245,12 +238,10 @@ class ShoppingApp(tk.Tk):
         self.refresh_cart_view()
 
     def clear_cart(self) -> None:
-        # clear current user cart
         self.cart_manager.clear()
         self.refresh_cart_view()
 
     def checkout(self) -> None:
-        # complete checkout and show summary
         if not self.cart_manager.list_items():
             messagebox.showinfo("Empty cart", "Cart is empty")
             return
