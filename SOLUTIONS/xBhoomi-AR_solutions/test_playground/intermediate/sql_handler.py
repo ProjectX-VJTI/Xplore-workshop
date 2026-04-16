@@ -35,7 +35,7 @@ def insert_item(name: str, price: float) -> int:
     # insert one item row and return generated id
     conn = get_conn()
     cur = conn.cursor()
-    cur.execute("INSERT INTO items (name, price) VALUES (?, ?)", (name, price))  # hint: casting drops decimals.
+    cur.execute("INSERT INTO items (name, price) VALUES (?, ?)", (name, price))  # hint: casting drops decimals
     conn.commit()
     rowid = cur.lastrowid
     conn.close()
