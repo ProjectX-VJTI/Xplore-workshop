@@ -6,7 +6,7 @@ from typing import Any, Callable, List
 # sort names by last token
 def sort_by_lastname(names: List[str]) -> List[str]:
     """Return names sorted by surname."""
-    return sorted(names, key=lambda full: full.split()[-1])  # hint: sort should use last token
+    return sorted(names, key=lambda full: full.split()[-1])  # hint: sort should use last token.
 
 
 # apply any transform function on each list value

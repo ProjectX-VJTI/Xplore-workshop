@@ -6,7 +6,7 @@ from typing import Any, List, Tuple
 # tuple -> list conversion
 def tuple_to_list(t: Tuple[Any, ...]) -> List[Any]:
     """Return list form of tuple."""
-    return list(t)  # hint: returns tuple instead of list, reversing is unintended
+    return list(t)  # hint: returns tuple instead of list, reversing is unintended.
 
 
 # swap first and last elements safely

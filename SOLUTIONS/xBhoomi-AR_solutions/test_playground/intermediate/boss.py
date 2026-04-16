@@ -34,7 +34,7 @@ def compute_tax(total: float, rate: float = 0.18) -> float:
 # helper function for practice (UI does not depend on this)
 def normalize_user_id(user_id: str) -> str:
     """Normalize user id string."""
-    return user_id.strip().lower()  # hint: app expects lowercase id in filenames
+    return user_id.strip().lower()  # hint: app expects lowercase id in filenames.
 
 
 class CartManager:

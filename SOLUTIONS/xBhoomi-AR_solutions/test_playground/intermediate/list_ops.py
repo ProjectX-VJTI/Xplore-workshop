@@ -26,7 +26,7 @@ def rotate_list(lst: List[Any], k: int) -> List[Any]:
     """Rotate list to the right by k."""
     if not lst:
         return []
-    k = k % len(lst)  # hint: extra +1 causes off-by-one rotation
+    k = k % len(lst)  # hint: extra +1 causes off-by-one rotation.
     return lst[-k:] + lst[:-k]  # hint: this rotates left; use right-rotation formula
 
 
