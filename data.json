@@ -490,17 +490,17 @@
         "stats": {
             "all": {
                 "commits": 5,
-                "prsOpened": 1,
+                "prsOpened": 3,
                 "prsMerged": 1
             },
             "6m": {
                 "commits": 5,
-                "prsOpened": 1,
+                "prsOpened": 3,
                 "prsMerged": 1
             },
             "3m": {
                 "commits": 5,
-                "prsOpened": 1,
+                "prsOpened": 3,
                 "prsMerged": 1
             }
         }
@@ -770,6 +770,28 @@
         }
     },
     {
+        "login": "sanskarcoder29",
+        "avatar_url": "https://avatars.githubusercontent.com/u/235847249?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 0,
+                "prsOpened": 3,
+                "prsMerged": 0
+            },
+            "6m": {
+                "commits": 0,
+                "prsOpened": 3,
+                "prsMerged": 0
+            },
+            "3m": {
+                "commits": 0,
+                "prsOpened": 3,
+                "prsMerged": 0
+            }
+        }
+    },
+    {
         "login": "JanhaviM-07",
         "avatar_url": "https://avatars.githubusercontent.com/u/263204296?v=4",
         "role": "contributor",
@@ -854,28 +876,6 @@
                 "commits": 0,
                 "prsOpened": 5,
                 "prsMerged": 3
-            }
-        }
-    },
-    {
-        "login": "sanskarcoder29",
-        "avatar_url": "https://avatars.githubusercontent.com/u/235847249?v=4",
-        "role": "contributor",
-        "stats": {
-            "all": {
-                "commits": 0,
-                "prsOpened": 2,
-                "prsMerged": 0
-            },
-            "6m": {
-                "commits": 0,
-                "prsOpened": 2,
-                "prsMerged": 0
-            },
-            "3m": {
-                "commits": 0,
-                "prsOpened": 2,
-                "prsMerged": 0
             }
         }
     },
