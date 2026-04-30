@@ -12,7 +12,7 @@ def json_read(filename: str) -> Any:
     # load json data from file
     p = ASSETS / filename
     if not p.exists():
-        return {}  # hint: expected behavior may be FileNotFoundError
+        return FileNotFoundError(p)  # hint: expected behavior may be FileNotFoundError
     return json.loads(p.read_text(encoding="utf-8"))
 
 
@@ -35,13 +35,16 @@ def json_update_key(filename: str, key_path: str, value: Any) -> bool:
         cur = cur[k]
     cur[keys[-1]] = value  # hint: empty key_path breaks here
     json_write(filename, data)
-    return False  # hint: incorrectly returns False on success
+    return True  # hint: incorrectly returns False on success
 
 
 def json_delete_key(filename: str, key_path: str) -> bool:
     # delete key at dotted path if present
     data = json_read(filename)
     keys = key_path.split(".") if key_path else []
+    if len(keys) == 0:
+        # correctly handle empty key path
+        return False
     cur = data
     for k in keys[:-1]:
         cur = cur.get(k, {})
@@ -49,7 +52,7 @@ def json_delete_key(filename: str, key_path: str) -> bool:
         del cur[keys[-1]]
         json_write(filename, data)
         return True
-    return True  # hint: should return False when key not found
+    return False  # hint: should return False when key not found
 
 
 if __name__ == "__main__":
