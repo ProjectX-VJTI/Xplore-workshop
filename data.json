@@ -644,17 +644,17 @@
         "stats": {
             "all": {
                 "commits": 3,
-                "prsOpened": 3,
+                "prsOpened": 4,
                 "prsMerged": 1
             },
             "6m": {
                 "commits": 3,
-                "prsOpened": 3,
+                "prsOpened": 4,
                 "prsMerged": 1
             },
             "3m": {
                 "commits": 3,
-                "prsOpened": 3,
+                "prsOpened": 4,
                 "prsMerged": 1
             }
         }
