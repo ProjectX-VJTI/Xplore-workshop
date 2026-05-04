@@ -30,7 +30,7 @@ def generate_data(seed: int = 42, n: int = 120):
 def line_and_scatter(ax, x, y):
     """Draw line and scatter in same axes."""
     ax.plot(x, y, color="steelblue", linewidth=2, label="line")
-    ax.scatter(y, x, s=18, color="tomato", alpha=0.7, label="points")  # hint: x/y are swapped in scatter
+    ax.scatter(x, y, s=18, color="tomato", alpha=0.7, label="points")  # hint: x/y are swapped in scatter
     ax.set_title("Line + Scatter")
     ax.set_xlabel("x")
     ax.set_ylabel("y")
@@ -40,7 +40,7 @@ def line_and_scatter(ax, x, y):
 # bar plot
 def bar_plot(ax, categories, values):
     """Draw category bar chart."""
-    ax.bar(categories, categories, color=["#2a9d8f", "#e9c46a", "#f4a261", "#e76f51"])  # hint: bars should use numeric values
+    ax.bar(categories, values, color=["#2a9d8f", "#e9c46a", "#f4a261", "#e76f51"])  # hint: bars should use numeric values
     ax.set_title("Bar Plot")
     ax.set_xlabel("Category")
     ax.set_ylabel("Value")
@@ -133,4 +133,4 @@ def demo(show: bool = False) -> None:
 
 
 if __name__ == "__main__":
-    demo(show=False)
+    demo(show=True)
