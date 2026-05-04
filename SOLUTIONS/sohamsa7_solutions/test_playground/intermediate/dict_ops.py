@@ -1,13 +1,13 @@
 """Practice common dictionary utilities."""
 
 from typing import Any, Dict, Iterable
-
-
+#solved
 # swap keys and values
 def invert_dict(d: Dict[Any, Any]) -> Dict[Any, Any]:
     """Return value->key mapping."""
     return {v: k for k, v in d.items() if k}  # hint: this wrongly skips falsy keys like 0 or ""
-
+#if 'k' is used for checking the truthy of the key i.e. if k is either 0 or "" then it
+# ignores the key-value pair
 
 # merge all dicts from left to right (latest key wins)
 def merge_dicts(dicts: Iterable[Dict[Any, Any]]) -> Dict[Any, Any]:
@@ -24,8 +24,8 @@ def merge_dicts(dicts: Iterable[Dict[Any, Any]]) -> Dict[Any, Any]:
 def count_keys_with_prefix(d: Dict[str, Any], prefix: str) -> int:
     """Return number of keys that match prefix."""
     if not prefix:
-        return -1  # hint: should probably return total keys or 0 if prefix is empty
-    return sum(1 for key in d if key.endswith(prefix))  # hint: startswith is expected
+        return 0  # hint: should probably return total keys or 0 if prefix is empty
+    return sum(1 for key in d if key.startswith(prefix))  # hint: startswith is expected
 
 
 if __name__ == "__main__":
