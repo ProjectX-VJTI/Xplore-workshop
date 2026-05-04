@@ -814,6 +814,28 @@
         }
     },
     {
+        "login": "paramgosar13-droid",
+        "avatar_url": "https://avatars.githubusercontent.com/u/260283594?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 0,
+                "prsOpened": 6,
+                "prsMerged": 3
+            },
+            "6m": {
+                "commits": 0,
+                "prsOpened": 6,
+                "prsMerged": 3
+            },
+            "3m": {
+                "commits": 0,
+                "prsOpened": 6,
+                "prsMerged": 3
+            }
+        }
+    },
+    {
         "login": "sanskarcoder29",
         "avatar_url": "https://avatars.githubusercontent.com/u/235847249?v=4",
         "role": "contributor",
@@ -876,28 +898,6 @@
                 "commits": 0,
                 "prsOpened": 2,
                 "prsMerged": 0
-            }
-        }
-    },
-    {
-        "login": "paramgosar13-droid",
-        "avatar_url": "https://avatars.githubusercontent.com/u/260283594?v=4",
-        "role": "contributor",
-        "stats": {
-            "all": {
-                "commits": 0,
-                "prsOpened": 5,
-                "prsMerged": 3
-            },
-            "6m": {
-                "commits": 0,
-                "prsOpened": 5,
-                "prsMerged": 3
-            },
-            "3m": {
-                "commits": 0,
-                "prsOpened": 5,
-                "prsMerged": 3
             }
         }
     },
