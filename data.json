@@ -5,17 +5,17 @@
         "role": "collaborator",
         "stats": {
             "all": {
-                "commits": 244,
+                "commits": 246,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "6m": {
-                "commits": 244,
+                "commits": 246,
                 "prsOpened": 18,
                 "prsMerged": 17
             },
             "3m": {
-                "commits": 244,
+                "commits": 246,
                 "prsOpened": 18,
                 "prsMerged": 17
             }
@@ -192,6 +192,28 @@
             },
             "3m": {
                 "commits": 2,
+                "prsOpened": 1,
+                "prsMerged": 1
+            }
+        }
+    },
+    {
+        "login": "merchantshubhi",
+        "avatar_url": "https://avatars.githubusercontent.com/u/263313285?v=4",
+        "role": "contributor",
+        "stats": {
+            "all": {
+                "commits": 1,
+                "prsOpened": 1,
+                "prsMerged": 1
+            },
+            "6m": {
+                "commits": 1,
+                "prsOpened": 1,
+                "prsMerged": 1
+            },
+            "3m": {
+                "commits": 1,
                 "prsOpened": 1,
                 "prsMerged": 1
             }
@@ -853,28 +875,6 @@
             "3m": {
                 "commits": 0,
                 "prsOpened": 3,
-                "prsMerged": 0
-            }
-        }
-    },
-    {
-        "login": "merchantshubhi",
-        "avatar_url": "https://avatars.githubusercontent.com/u/263313285?v=4",
-        "role": "contributor",
-        "stats": {
-            "all": {
-                "commits": 0,
-                "prsOpened": 1,
-                "prsMerged": 0
-            },
-            "6m": {
-                "commits": 0,
-                "prsOpened": 1,
-                "prsMerged": 0
-            },
-            "3m": {
-                "commits": 0,
-                "prsOpened": 1,
                 "prsMerged": 0
             }
         }
