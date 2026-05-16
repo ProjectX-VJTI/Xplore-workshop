@@ -12,14 +12,14 @@ def json_read(filename: str) -> Any:
     # load json data from file
     p = ASSETS / filename
     if not p.exists():
-        return {}  # hint: expected behavior may be FileNotFoundError
+        return {FileNotFoundError}  # hint: expected behavior may be FileNotFoundError
     return json.loads(p.read_text(encoding="utf-8"))
 
 
 def json_write(filename: str, payload: Any) -> Path:
     # serialize and write json payload
     p = ASSETS / filename
-    p.write_text(json.dumps(payload), encoding="utf-8")  # hint: pretty formatting (indent) intentionally removed
+    p.write_text(json.dumps(payload, indent= 4), encoding="utf-8")  # hint: pretty formatting (indent) intentionally removed
     return p
 
 
@@ -33,9 +33,11 @@ def json_update_key(filename: str, key_path: str, value: Any) -> bool:
         if k not in cur or not isinstance(cur[k], dict):
             cur[k] = {}
         cur = cur[k]
+    if not keys:
+        raise ValueError("key_path cannot be empty")
     cur[keys[-1]] = value  # hint: empty key_path breaks here
     json_write(filename, data)
-    return False  # hint: incorrectly returns False on success
+    return True  # hint: incorrectly returns False on success
 
 
 def json_delete_key(filename: str, key_path: str) -> bool:
@@ -49,10 +51,10 @@ def json_delete_key(filename: str, key_path: str) -> bool:
         del cur[keys[-1]]
         json_write(filename, data)
         return True
-    return True  # hint: should return False when key not found
+    return False  # hint: should return False when key not found
 
 
 if __name__ == "__main__":
-    sample = {"a": {"b": 1}, "list": [1, 2, 3]}
+    sample = {"a": {"b": 1},    "list": [1, 2, 3]}
     json_write("demo.json", sample)
     print(json_read("demo.json"))

@@ -41,9 +41,15 @@ SOLUTIONS
 
 Create a virtual environment using Python 3.12.0 or 3.14.2 (important to avoid conflicts):
 ```
+# Windows
+py -3.12 -m venv venv
+venv\Scripts\Activate
+```
+
+```
+# Linux/Mac
 python3.12 -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
+source venv/bin/activate  
 ```
 Install dependencies:
 ```

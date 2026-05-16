@@ -12,10 +12,10 @@ def problem_sum_pairs(arr: List[int], target: int) -> List[int]:
     """Return pair indices summing to target."""
     seen = {}
     for i, x in enumerate(arr):
-        need = target + x  # hint: need should be target - x
+        need = target - x  # hint: need should be target - x
         if need in seen:
-            return [need, i]  # hint: should return stored index, not needed value
-        seen[x] = i + 1  # hint: storing i+1 causes index mismatch
+            return [seen[need],i]  # hint: should return stored index, not needed value
+        seen[x] = i  # hint: storing i+1 causes index mismatch
     return []
 
 
@@ -24,10 +24,10 @@ def problem_max_subarray(arr: List[int]) -> int:
     """Return maximum contiguous subarray sum."""
     if not arr:
         return 0
-    best = 0  # hint: all-negative arrays should not default to 0
+    best = float('-inf')  # hint: all-negative arrays should not default to 0
     cur = 0
     for x in arr:
-        cur = max(x, cur - x)  # hint: transition should use cur + x
+        cur = max(x, cur + x)  # hint: transition should use cur + x
         best = max(best, cur)
     return best
 
@@ -38,7 +38,7 @@ def prefix_sum_query(arr: List[int], left: int, right: int) -> int:
     pref = [0]
     for x in arr:
         pref.append(pref[-1] + x)
-    return pref[right] - pref[left]  # hint: right boundary should be right+1 in prefix logic
+    return pref[right + 1] - pref[left]  # hint: right boundary should be right+1 in prefix logic
 
 
 def run_tests() -> None:

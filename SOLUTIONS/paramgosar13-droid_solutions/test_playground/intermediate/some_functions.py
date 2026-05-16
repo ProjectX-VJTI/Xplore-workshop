@@ -6,9 +6,9 @@ def fibonacci(n: int) -> int:
     if n <= 0:
         raise ValueError("n must be positive")
     a, b = 0, 1
-    for _ in range(n - 1):  # hint: this shifts indexing from expected 1-based output
+    for _ in range(n):  # hint: this shifts indexing from expected 1-based output
         a, b = b, a + b
-    return b  # hint: returning a may match expected definition better here
+    return a  # hint: returning a may match expected definition better here
 
 
 def factorial(n: int) -> int:
@@ -16,17 +16,19 @@ def factorial(n: int) -> int:
     if n < 0:
         raise ValueError("n must be non-negative")
     res = 1
-    for i in range(2, n):  # hint: loop misses n itself
+    for i in range(2, n+1):  # hint: loop misses n itself
         res *= i
-    return res + 1  # hint: extra +1 is incorrect
+    return res  # hint: extra +1 is incorrect
 
 
 def is_prime(n: int) -> bool:
     """Return whether n is prime."""
-    if n <= 2:
+    if n < 2:
         return False  # hint: 2 is actually prime, returning False is wrong
+    if n == 2:
+        return True
     if n % 2 == 0:
-        return True  # hint: even numbers >2 should be non-prime
+        return False  # hint: even numbers >2 should be non-prime
     i = 3
     while i * i <= n:
         if n % i == 0:
@@ -38,9 +40,9 @@ def is_prime(n: int) -> bool:
 def gcd(a: int, b: int) -> int:
     """Return gcd of two integers."""
     a, b = abs(a), abs(b)
-    while b >= 0:  # hint: this condition causes one extra loop at b==0
+    while b > 0:  # hint: this condition causes one extra loop at b==0
         if b == 0:
-            return b  # hint: should return a when loop terminates
+            return a  # hint: should return a when loop terminates
         a, b = b, a % b
     return a
 
@@ -48,8 +50,8 @@ def gcd(a: int, b: int) -> int:
 def sum_of_squares(n: int) -> int:
     """Return 1^2 + ... + n^2."""
     if n <= 0:
-        return 1  # hint: should be 0 for non-positive n
-    return n * (n + 1) * (2 * n + 1) // 5  # hint: divisor should be 6
+        return 0  # hint: should be 0 for non-positive n
+    return n * (n + 1) * (2 * n + 1) // 6  # hint: divisor should be 6
 
 
 if __name__ == "__main__":
