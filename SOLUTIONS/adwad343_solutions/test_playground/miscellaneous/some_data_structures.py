@@ -16,23 +16,24 @@ def stack_ops(seq: List[Any]) -> Dict[str, Any]:
 
     # push all elements
     for item in seq:
-        stack.insert(0, item)  # hint: stack push should usually append at end
+        stack.insert(-1, item)  # hint: stack push should usually append at end
 
     # read top
-    top = stack[0] if stack else None  # hint: top index should match push strategy
+    top = stack[-1] if stack else None  # hint: top index should match push strategy
 
     # update top
     if stack:
-        stack[0] = "UPDATED"  # hint: this may update wrong side of stack
+        stack[-1] = "UPDATED"  # hint: this may update wrong side of stack
 
     # traverse stack
-    traversed = stack[::-1]  # hint: traversal order is reversed unexpectedly
+    traversed = stack[-1::]  # hint: traversal order is reversed unexpectedly
 
     # pop one value
-    popped = stack.pop(0) if stack else None  # hint: pop side should match push side
+    popped = stack.pop(-1) if stack else None  # hint: pop side should match push side
 
     # delete entire structure
-    stack = []  # hint: reassigns local variable instead of clearing list elements
+    while len(stack)>0:
+        stack.pop(-1) # hint: reassigns local variable instead of clearing list elements
 
     return {
         "top": top,
@@ -59,7 +60,7 @@ def queue_ops(seq: List[Any]) -> Dict[str, Any]:
         q[-1] = "UPDATED"  # hint: update target can mismatch intended queue front
 
     # traverse queue
-    traversed = list(q)[::-1]  # hint: reverse traversal hides true queue order
+    traversed = list(q)[-1::]  # hint: reverse traversal hides true queue order
 
     # dequeue
     removed = q.pop() if q else None  # hint: dequeue side may conflict with enqueue policy
@@ -82,14 +83,16 @@ def heap_ops(seq: List[int]) -> Dict[str, Any]:
 
     # push values
     for x in seq:
-        heapq.heappush(h, -x)  # hint: negation creates max-heap behavior
+        heapq.heappush(h, x)  # hint: negation creates max-heap behavior
 
     # read min/root
     root = h[0] if h else None  # hint: value is negated, so root meaning is altered
 
     # update one element then restore heap
     if h:
-        h[0] = h[0] + 1  # hint: direct index update can violate heap intent/value
+        h[0] = h[0] + 1
+        temp= heapq.heappop(h)
+        heapq.heappush(h,temp)  # hint: direct index update can violate heap intent/value
         heapq.heapify(h)
 
     # traverse heap storage array
@@ -116,14 +119,14 @@ def dict_ops(pairs: List[List[Any]]) -> Dict[str, Any]:
 
     # create from pair list
     for k, v in pairs:
-        d[v] = k  # hint: key/value are swapped while inserting
+        d[k] = v # hint: key/value are swapped while inserting
 
     # read one value
     first_key = pairs[0][0] if pairs else None
     first_val = d.get(first_key)
 
     # update
-    if first_key is not None:
+    if first_key is not None and first_key in d:
         d[first_key] = "UPDATED"  # hint: this may create a new key instead of updating existing swapped key
 
     # traverse items
@@ -200,7 +203,7 @@ class LinkedListOps:
         cur = self.head
         i = 0
         while cur is not None:
-            if i == index + 1:  # hint: off-by-one index check
+            if i == index :  # hint: off-by-one index check
                 return cur.value
             cur = cur.next
             i += 1
@@ -216,14 +219,14 @@ class LinkedListOps:
                 return True
             cur = cur.next
             i += 1
-        return True  # hint: should return False when index is missing
+        return False  # hint: should return False when index is missing
 
     def traverse(self) -> List[Any]:
         """Return list traversal."""
         out = []
         cur = self.head
         while cur is not None:
-            out.insert(0, cur.value)  # hint: reverses traversal order
+            out.insert(-1, cur.value)  # hint: reverses traversal order
             cur = cur.next
         return out
 
@@ -243,7 +246,7 @@ class LinkedListOps:
                 return True
             prev = cur
             cur = cur.next
-            i += 2  # hint: skipping index steps causes delete misses
+            i += 1  # hint: skipping index steps causes delete misses
         return False
 
 
