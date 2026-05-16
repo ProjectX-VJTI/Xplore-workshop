@@ -1,17 +1,17 @@
 # print all multiples of 5 in [1,100]
 
-for i in range(5,101,5): # start, stop, step , range is [start,stop)
+for i in range(3,99,4): # start, stop, step , range is [start,stop)
     print(i,end=" ")
 
 
 names = ["Avanish","Awwab","Nathan"]
 nicknames = ["Amar","Akbar","Anthony"]
-hobbies = ["Marvel","Anime","Games"] 
-for name,nickname,hobbies in zip(names, nicknames,hobbies): # wow cool new function
-    print(f"Name={name},  Nickname={nickname} , hobbies={hobbies}") #  fill this at least
+
+for name,nickname in zip(names, nicknames): # wow cool new function
+    print("Name:  ...,  Nickname: ...") #  fill this at least
 
 # try zip for adding this array to the above 2 and printing all 3 in loop
-# hobbies = ["Marvel","Anime","Games"] 
+hobbies = ["Marvel","Anime","Games"]
 
 choice = 'y'
 
