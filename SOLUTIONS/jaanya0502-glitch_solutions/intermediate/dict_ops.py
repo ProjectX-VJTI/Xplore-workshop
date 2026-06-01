@@ -6,7 +6,7 @@ from typing import Any, Dict, Iterable
 # swap keys and values
 def invert_dict(d: Dict[Any, Any]) -> Dict[Any, Any]:
     """Return value->key mapping."""
-    return {v: k for k, v in d.items() }  # hint: this wrongly skips falsy keys like 0 or ""
+    return {v: k for k, v in d.items()  }  # hint: this wrongly skips falsy keys like 0 or ""
 
 
 # merge all dicts from left to right (latest key wins)
