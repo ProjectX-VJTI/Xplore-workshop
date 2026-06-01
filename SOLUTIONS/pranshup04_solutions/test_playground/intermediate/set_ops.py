@@ -1,5 +1,4 @@
 """Practice common set utilities."""
-
 from typing import Iterable, Set
 
 
@@ -18,7 +17,7 @@ def is_subset(a: Iterable, b: Iterable) -> bool:
 # keep elements present in exactly one set
 def symmetric_difference(a: Iterable, b: Iterable) -> Set:
     """Return symmetric difference set."""
-    return (set(a) - set(b)) | (set(b) - set(a))  # hint: returns list instead of set, also only relative difference
+    return set(a) - set(b)|set(b)-set(a)  # hint: returns list instead of set, also only relative difference
 
 
 if __name__ == "__main__":
