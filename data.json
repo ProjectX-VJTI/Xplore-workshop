@@ -10,8 +10,8 @@
                 "prsMerged": 1
             },
             "6m": {
-                "commits": 2,
-                "prsOpened": 1,
+                "commits": 1,
+                "prsOpened": 0,
                 "prsMerged": 0
             },
             "3m": {
@@ -54,7 +54,7 @@
                 "prsMerged": 17
             },
             "6m": {
-                "commits": 88,
+                "commits": 85,
                 "prsOpened": 2,
                 "prsMerged": 2
             },
@@ -76,9 +76,9 @@
                 "prsMerged": 2
             },
             "6m": {
-                "commits": 2,
+                "commits": 1,
                 "prsOpened": 1,
-                "prsMerged": 2
+                "prsMerged": 1
             },
             "3m": {
                 "commits": 0,
@@ -120,7 +120,7 @@
                 "prsMerged": 2
             },
             "6m": {
-                "commits": 5,
+                "commits": 4,
                 "prsOpened": 2,
                 "prsMerged": 1
             },
@@ -384,9 +384,9 @@
                 "prsMerged": 4
             },
             "6m": {
-                "commits": 3,
-                "prsOpened": 2,
-                "prsMerged": 2
+                "commits": 1,
+                "prsOpened": 1,
+                "prsMerged": 1
             },
             "3m": {
                 "commits": 0,
@@ -516,8 +516,8 @@
                 "prsMerged": 5
             },
             "6m": {
-                "commits": 6,
-                "prsOpened": 4,
+                "commits": 4,
+                "prsOpened": 3,
                 "prsMerged": 3
             },
             "3m": {
@@ -561,7 +561,7 @@
             },
             "6m": {
                 "commits": 1,
-                "prsOpened": 3,
+                "prsOpened": 2,
                 "prsMerged": 3
             },
             "3m": {
@@ -626,9 +626,9 @@
                 "prsMerged": 3
             },
             "6m": {
-                "commits": 1,
-                "prsOpened": 1,
-                "prsMerged": 1
+                "commits": 0,
+                "prsOpened": 0,
+                "prsMerged": 0
             },
             "3m": {
                 "commits": 0,
