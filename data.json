@@ -560,8 +560,8 @@
                 "prsMerged": 6
             },
             "6m": {
-                "commits": 1,
-                "prsOpened": 2,
+                "commits": 0,
+                "prsOpened": 1,
                 "prsMerged": 2
             },
             "3m": {
