@@ -296,7 +296,7 @@
                 "prsMerged": 1
             },
             "6m": {
-                "commits": 2,
+                "commits": 1,
                 "prsOpened": 1,
                 "prsMerged": 1
             },
@@ -318,7 +318,7 @@
                 "prsMerged": 1
             },
             "6m": {
-                "commits": 1,
+                "commits": 0,
                 "prsOpened": 1,
                 "prsMerged": 1
             },
@@ -340,8 +340,8 @@
                 "prsMerged": 1
             },
             "6m": {
-                "commits": 1,
-                "prsOpened": 1,
+                "commits": 0,
+                "prsOpened": 0,
                 "prsMerged": 1
             },
             "3m": {
